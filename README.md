@@ -9,8 +9,11 @@ Pre-reviews a B2B SaaS board deck **before** it goes to the board, so the board 
 3. **Customer evidence behind product plans** — every roadmap item should answer: how many customers did we talk to, and what did we learn? TAM projections don't count.
 4. **Competitive reality** — what are competitors doing, and are we winning or losing against them, with win/loss data. "We have no real competitors" gets called out.
 5. **A clear "what" and a real "why" in every section** — sales, churn, financials, team, whatever the meeting needs. "Churn rose because cancellations increased" is a what wearing a why costume, and the review says so.
+6. **Accountability** — plan vs. actual on every headline number, consistent metrics with no selective-disclosure games, and closed loops on last meeting's commitments. Bad news early, plainly, with a diagnosis.
+7. **Cash clarity** — burn, runway, and the next-raise date math stated plainly, so the board never has to do the subtraction themselves.
+8. **The asks** — explicit decisions needed vs. help wanted, each decision decidable from the deck, and discussion topics that match the deck's own biggest problems.
 
-The output is a structured report: a verdict (ready / ready after small fixes / needs revision), a jargon table with rewrites, section-by-section what/why analysis, the questions the board will ask, and a prioritized fix list.
+The output is a structured report: a verdict (ready / ready after small fixes / needs revision), a jargon table with rewrites, section-by-section what/why analysis, an accountability-and-cash readout, the questions the board will ask, and a prioritized fix list.
 
 ## Install
 
