@@ -1,0 +1,51 @@
+{
+  "skill_name": "board-deck-review",
+  "evals": [
+    {
+      "id": 0,
+      "name": "jargon-heavy-evidence-free",
+      "prompt": "I'm the CEO of Meridian, a logistics SaaS company. Our Q3 board meeting is next Thursday and I need to send the deck to the board tomorrow night. Can you review it before it goes out? The deck is at evals/files/meridian_q3_board_deck.md. Tell me what to fix.",
+      "expected_output": "A review that flags the pervasive buzzwords with quoted phrases and plain rewrites, fails the one-sentence strategy test (mission statement names no pain or mechanism), flags all three roadmap bets as lacking customer evidence (TAM projections don't count), challenges the 'no true competitors' claim, flags the churn slide as a fix-without-a-diagnosis, and produces a prioritized fix list with a needs-revision verdict.",
+      "files": ["evals/files/meridian_q3_board_deck.md"],
+      "assertions": [
+        "Flags at least three distinct buzzword/jargon phrases, quoting the deck's actual words (e.g. 'best-in-class', 'hypergrowth momentum', '10x paradigm shift', 'firing on all cylinders', 'world-class')",
+        "Provides plain-language rewrites or concrete replacements for flagged jargon, not just a list of bad phrases",
+        "Identifies that the deck's strategy/mission statement ('empower enterprises to unlock operational excellence...') fails as a strategy: it names no customer pain and no mechanism for solving it",
+        "Flags the three 2027 roadmap bets (Autonomous Dispatch AI, Meridian Marketplace, Predictive Capacity Engine) as lacking real customer evidence, and does not accept 'the market is demanding' or the $47B TAM citation as evidence",
+        "Challenges the 'We have no true competitors' claim on slide 6",
+        "Flags the retention slide as missing a real 'why' for churn rising from 1.9% to 3.1% monthly (the CS-playbook response is a fix announced without a diagnosis)",
+        "Gives an overall verdict that the deck needs revision, plus a prioritized list of fixes"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "calibration-subtle-flaws",
+      "prompt": "here's our q2 board deck — harbor_q2_board_deck.md. pre-review it like a tough board member would. we send friday. anything in here that gets us grilled?",
+      "expected_output": "A calibrated review: passes the slide-2 strategy sentence and the well-evidenced tip-pooling plan (27 interviews) without flagging them, flags the Harbor Capital plan as evidence-free, catches the circular churn 'why' (cancellations increased is a restated what), and catches the competition slide's unquantified 'we win on product' claim contradicting the falling win rate on the sales slide. Verdict should be measured, not a wholesale rejection.",
+      "files": ["evals/files/harbor_q2_board_deck.md"],
+      "assertions": [
+        "Does NOT flag the tip-pooling compliance engine plan as lacking customer evidence — treats the 27 interviews / 19 naming it top worry / 11 fined data as solid support",
+        "Flags the Harbor Capital lending plan as lacking customer evidence — only an analyst market-size projection supports it",
+        "Flags the churn explanation as circular or hollow: 'driven by an increase in cancellations among customers in their first 90 days' restates the what, and the review asks why first-90-day customers cancel",
+        "Flags the competition slide: 'we win on product depth' / 'rarely lose to ADP' has no win/loss numbers behind it and/or contradicts the 38%-to-31% win-rate decline on the sales slide",
+        "Explicitly credits at least one genuinely strong element (the slide-2 strategy sentence, the Gusto loss analysis on the sales slide, the gross-margin why, or the attrition why)",
+        "The overall verdict is measured (close to ready / targeted fixes), not a wholesale rejection of the deck"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "annual-plan-what-why",
+      "prompt": "Our annual plan board meeting is in two weeks. Please review the attached 2027 plan deck (quarry_annual_plan_deck.md) before it goes to the board — flag anything that's unclear, unsupported, or that will invite hard questions.",
+      "expected_output": "A review that applies what/why analysis to the sections this meeting actually has: passes the strategy sentence, flags 'sales cycles lengthened' as a second symptom posing as a why, flags the GTM reorg as stated without a why, credits the budget slide's solid what+why, does not fault the deck for deferring product detail to the September deep-dive, and raises the competitive question implied by the win-rate decline.",
+      "files": ["evals/files/quarry_annual_plan_deck.md"],
+      "assertions": [
+        "Confirms the slide-2 strategy sentence passes the one-sentence test: it states the customer pain (losing bids, weeks of spreadsheet estimating) and the solution (estimates in days priced from past-job costs)",
+        "Flags 'sales cycles lengthened' as not a real why — it is a second symptom — and asks why cycles lengthened or why win rate fell",
+        "Flags the September go-to-market reorg as stated without any rationale (no why given for the reorg)",
+        "Credits the 2027 budget slide as having a solid what+why (AE hires tied to 40% of inbound from uncovered territories; infrastructure spend tied to 6-of-10 top prospects requiring SOC 2 / data residency)",
+        "Does not fault the deck for deferring product detail to the September deep-dive — slide 7 is not flagged as a missing-evidence violation",
+        "Raises the competitive question implied by the win-rate decline from 29% to 22% (who are we losing to, or what changed competitively)"
+      ]
+    }
+  ]
+}
