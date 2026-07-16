@@ -8,8 +8,8 @@
     {
       "name": "board-deck-review",
       "source": "./",
-      "description": "Pre-review a B2B SaaS board deck before it goes to the board: plain language, one-sentence strategy, customer evidence behind product plans, competitive reality, and a clear what + why in every section.",
-      "version": "0.2.1",
+      "description": "Pre-review B2B SaaS board materials for strategic coherence, reconciled metrics, credible causality, accountable forecasts, cash clarity, and decision-ready asks.",
+      "version": "0.3.0",
       "author": {
         "name": "Alex Gounares"
       }

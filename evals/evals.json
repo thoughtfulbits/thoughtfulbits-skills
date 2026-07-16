@@ -5,46 +5,148 @@
       "id": 0,
       "name": "jargon-heavy-evidence-free",
       "prompt": "I'm the CEO of Meridian, a logistics SaaS company. Our Q3 board meeting is next Thursday and I need to send the deck to the board tomorrow night. Can you review it before it goes out? The deck is at evals/files/meridian_q3_board_deck.md. Tell me what to fix.",
-      "expected_output": "A review that flags the pervasive buzzwords with quoted phrases and plain rewrites, fails the one-sentence strategy test (mission statement names no pain or mechanism), flags all three roadmap bets as lacking customer evidence (TAM projections don't count), challenges the 'no true competitors' claim, flags the churn slide as a fix-without-a-diagnosis, and produces a prioritized fix list with a needs-revision verdict.",
-      "files": ["evals/files/meridian_q3_board_deck.md"],
-      "assertions": [
-        "Flags at least three distinct buzzword/jargon phrases, quoting the deck's actual words (e.g. 'best-in-class', 'hypergrowth momentum', '10x paradigm shift', 'firing on all cylinders', 'world-class')",
-        "Provides plain-language rewrites or concrete replacements for flagged jargon, not just a list of bad phrases",
-        "Identifies that the deck's strategy/mission statement ('empower enterprises to unlock operational excellence...') fails as a strategy: it names no customer pain and no mechanism for solving it",
-        "Flags the three 2027 roadmap bets (Autonomous Dispatch AI, Meridian Marketplace, Predictive Capacity Engine) as lacking real customer evidence, and does not accept 'the market is demanding' or the $47B TAM citation as evidence",
-        "Challenges the 'We have no true competitors' claim on slide 6",
-        "Flags the retention slide as missing a real 'why' for churn rising from 1.9% to 3.1% monthly (the CS-playbook response is a fix announced without a diagnosis)",
-        "Gives an overall verdict that the deck needs revision, plus a prioritized list of fixes"
+      "expected_output": "A grounded needs-revision review that prioritizes missing strategy, unsupported roadmap bets, undiagnosed churn, cash uncertainty, and an undecidable option-pool ask ahead of jargon cleanup. It should distinguish unavailable comparison evidence from actual selective disclosure and give specific deck-edit, analysis-required, and decision-preparation actions.",
+      "files": [
+        "evals/files/meridian_q3_board_deck.md"
+      ],
+      "expectations": [
+        "Flags at least three distinct buzzword phrases by quoting the deck and either rewrites a supported underlying claim or asks management to establish the claim first",
+        "Finds that the mission statement names neither a concrete customer pain nor a mechanism for solving it and therefore fails the strategy-spine test",
+        "Flags all three 2027 roadmap bets as unsupported and does not accept market demand, TAM, or 'where the puck is going' as customer evidence",
+        "Challenges the 'no true competitors' claim and names the status quo or doing nothing as alternatives the deck ignores",
+        "Treats the churn increase from 1.9% to 3.1% as undiagnosed and identifies the CS playbook as a remedy announced before a cause",
+        "Marks plan-vs-actual and prior-commitment checks as not verifiable from the supplied deck rather than accusing management of selective disclosure",
+        "Notes that the stated 19-month runway cannot be reconciled without cash balance and that burn rose from $1.5M to $1.8M without a stated cause or financing posture",
+        "Marks the 2% option-pool approval ask undecidable because the deck lacks the current pool, hiring need, dilution, alternatives, and management rationale",
+        "Gives a needs-revision verdict and ranks substantive must-fix actions ahead of copy cleanup using the skill's action types",
+        "Does not create a review file because the prompt did not request one"
       ]
     },
     {
       "id": 1,
       "name": "calibration-subtle-flaws",
       "prompt": "here's our q2 board deck — harbor_q2_board_deck.md. pre-review it like a tough board member would. we send friday. anything in here that gets us grilled?",
-      "expected_output": "A calibrated review: passes the slide-2 strategy sentence and the well-evidenced tip-pooling plan (27 interviews) without flagging them, flags the Harbor Capital plan as evidence-free, catches the circular churn 'why' (cancellations increased is a restated what), and catches the competition slide's unquantified 'we win on product' claim contradicting the falling win rate on the sales slide. Verdict should be measured, not a wholesale rejection.",
-      "files": ["evals/files/harbor_q2_board_deck.md"],
-      "assertions": [
-        "Does NOT flag the tip-pooling compliance engine plan as lacking customer evidence — treats the 27 interviews / 19 naming it top worry / 11 fined data as solid support",
-        "Flags the Harbor Capital lending plan as lacking customer evidence — only an analyst market-size projection supports it",
-        "Flags the churn explanation as circular or hollow: 'driven by an increase in cancellations among customers in their first 90 days' restates the what, and the review asks why first-90-day customers cancel",
-        "Flags the competition slide: 'we win on product depth' / 'rarely lose to ADP' has no win/loss numbers behind it and/or contradicts the 38%-to-31% win-rate decline on the sales slide",
-        "Explicitly credits at least one genuinely strong element (the slide-2 strategy sentence, the Gusto loss analysis on the sales slide, the gross-margin why, or the attrition why)",
-        "The overall verdict is measured (close to ready / targeted fixes), not a wholesale rejection of the deck"
+      "expected_output": "A calibrated review that credits the strong strategy sentence, product evidence, Gusto loss analysis, gross-margin explanation, and attrition diagnosis while isolating the unsupported Harbor Capital bet, hollow churn explanation, unquantified competition claim, and unverifiable runway. The verdict should call for targeted fixes rather than reject the deck wholesale.",
+      "files": [
+        "evals/files/harbor_q2_board_deck.md"
+      ],
+      "expectations": [
+        "Passes the slide-2 strategy sentence as a clear customer-pain and solution-mechanism statement",
+        "Treats the 27 interviews, 19 customers naming compliance as a top worry, 11 fines, and willingness-to-pay evidence as strong quantified support for the tip-pooling plan",
+        "Flags Harbor Capital as unsupported because its only evidence is an analyst market-size projection",
+        "Flags the first-90-day churn explanation as circular or too shallow and asks why those customers cancel",
+        "Flags that 'we win on product depth' and 'rarely lose to ADP' lack win/loss data and cross-checks them against the 38%-to-31% overall win-rate decline",
+        "Credits the Gusto loss analysis, gross-margin drivers, or engineering-attrition diagnosis as a genuinely strong what-why-evidence chain",
+        "Labels plan-vs-actual and prior-commitment consistency as not verifiable without comparison materials instead of alleging metric games",
+        "Notes that 26 months of runway cannot be reconciled without cash balance while avoiding an invented runway calculation",
+        "Classifies the counter-bundle and compensation topics as discussion or advice items and assesses whether their evidence is sufficient for the intended conversation",
+        "Uses a measured ready-after-small-fixes style verdict and does not create a review file"
       ]
     },
     {
       "id": 2,
       "name": "annual-plan-what-why",
       "prompt": "Our annual plan board meeting is in two weeks. Please review the attached 2027 plan deck (quarry_annual_plan_deck.md) before it goes to the board — flag anything that's unclear, unsupported, or that will invite hard questions.",
-      "expected_output": "A review that applies what/why analysis to the sections this meeting actually has: passes the strategy sentence, flags 'sales cycles lengthened' as a second symptom posing as a why, flags the GTM reorg as stated without a why, credits the budget slide's solid what+why, does not fault the deck for deferring product detail to the September deep-dive, and raises the competitive question implied by the win-rate decline.",
-      "files": ["evals/files/quarry_annual_plan_deck.md"],
-      "assertions": [
-        "Confirms the slide-2 strategy sentence passes the one-sentence test: it states the customer pain (losing bids, weeks of spreadsheet estimating) and the solution (estimates in days priced from past-job costs)",
-        "Flags 'sales cycles lengthened' as not a real why — it is a second symptom — and asks why cycles lengthened or why win rate fell",
-        "Flags the September go-to-market reorg as stated without any rationale (no why given for the reorg)",
-        "Credits the 2027 budget slide as having a solid what+why (AE hires tied to 40% of inbound from uncovered territories; infrastructure spend tied to 6-of-10 top prospects requiring SOC 2 / data residency)",
-        "Does not fault the deck for deferring product detail to the September deep-dive — slide 7 is not flagged as a missing-evidence violation",
-        "Raises the competitive question implied by the win-rate decline from 29% to 22% (who are we losing to, or what changed competitively)"
+      "expected_output": "An annual-plan review that passes the strategy spine and well-supported budget choices, challenges shallow sales causality and the unexplained GTM reorganization, tests the forecast assumptions and downside case, respects the product deep-dive pointer, and marks the pricing-floor approval undecidable from the deck.",
+      "files": [
+        "evals/files/quarry_annual_plan_deck.md"
+      ],
+      "expectations": [
+        "Passes the strategy sentence because it states the customer pain, solution mechanism, and customer outcome",
+        "Flags 'sales cycles lengthened' as a second symptom rather than a causal explanation for the win-rate decline",
+        "Flags the September GTM reorganization as stated without a rationale, expected outcome, owner, timing, or success measure",
+        "Credits the budget evidence tying AE hires to uncovered demand and infrastructure spend to named prospect requirements",
+        "Does not fault the deck for deferring product detail to the September deep-dive",
+        "Raises the competitive question implied by the win-rate decline from 29% to 22%",
+        "Tests the assumptions behind recovery to 26% win rate, 80-day cycles, and Q4 breakeven and asks for leading indicators or a change-course trigger",
+        "Recognizes the 88%-of-sales-plan breakeven statement as useful downside sensitivity while noting that the underlying cash and operating consequences are absent",
+        "Marks approval of the updated Texas pricing floor undecidable because the deck does not show the proposed floor, economics, alternatives, or expected impact",
+        "Keeps the verdict calibrated to an annual-plan meeting and does not create a review file"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "financing-math-and-approval",
+      "prompt": "We have a financing committee call on Monday. Review cairn_financing_board_deck.md as a board pre-read and tell me what has to change before I send it.",
+      "expected_output": "A needs-revision financing review that shows the runway arithmetic, incorporates the planned hiring step-up, challenges the unsupported 24-month and breakeven claims, and turns the blanket fundraising authorization into a decision-ready request with alternatives, guardrails, downside triggers, and accountable owners.",
+      "files": [
+        "evals/files/cairn_financing_board_deck.md"
+      ],
+      "expectations": [
+        "Calculates that $8.4M divided by $900K monthly burn is about 9.3 months, not the stated 14 months",
+        "Incorporates the additional $420K monthly hiring cost and shows that a $12M raise does not support the stated 24 months at a $1.32M burn without quantified revenue improvement or other changes",
+        "Treats breakeven in March 2028 and revenue offset by Q2 2027 as unsupported forecast claims because the deck supplies no operating model, assumptions, or leading indicators",
+        "Marks the approval to raise on any terms management deems acceptable as undecidable without valuation or dilution guardrails, minimum proceeds, alternatives, investor status, and authority boundaries",
+        "Grades encouraging investor conversations as anecdotal and the category-window claim as unsupported rather than accepting them as financing evidence",
+        "Flags 'moderate hiring' as an incomplete downside plan lacking a trigger, owner, savings amount, and effect on milestones",
+        "Does not fail the financing special committee deck for omitting a company-wide pain-and-solution strategy sentence",
+        "Uses analysis-required and decision-preparation recommendations rather than inventing financing terms",
+        "Gives a needs-revision verdict with the conflicting cash math and approval design as must-fix items",
+        "Does not create a review file"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "cross-period-metric-drift",
+      "prompt": "Please pressure-test our Q4 board deck against the prior quarter. The current deck is northstar_q4_board_deck.md and the prior deck is northstar_q3_board_deck.md. I especially want to know if we're grading ourselves honestly.",
+      "expected_output": "A cross-period accountability review that uses the prior deck as evidence: it should pass the stable strategy spine, catch the switch from gross revenue retention to logo retention, close each prior commitment, reconcile cash and runway, credit the strong implementation diagnosis, and distinguish pilot evidence from unvalidated full-rollout results.",
+      "files": [
+        "evals/files/northstar_q4_board_deck.md",
+        "evals/files/northstar_q3_board_deck.md"
+      ],
+      "expectations": [
+        "Passes the unchanged Northstar strategy spine and does not make it a top finding",
+        "Flags the switch from 92% gross revenue retention to 94% logo retention as a metric-definition change that prevents an honest trend comparison",
+        "Recognizes that the under-45-day implementation commitment was missed and credits the current deck for stating the miss plainly",
+        "Finds that the November 1 renewal-risk rollout commitment was completed only on December 12 and that the current deck does not explicitly grade that commitment",
+        "Finds that the commitment to keep gross revenue retention above 91% is not verifiable because the current deck substitutes logo retention",
+        "Credits the security-review explanation as a quantified what-why-response chain with an owner, deadline, and success measure",
+        "Distinguishes the validated pilot result from the full rollout, which has only 38% usage and no measured renewal outcome yet",
+        "Calculates that $12.2M cash divided by $1.3M monthly burn is about 9.4 months, not the stated 15 months",
+        "Prioritizes metric continuity, commitment closure, and runway reconciliation above the vague momentum phrase",
+        "Does not create a review file"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "ready-special-topic",
+      "prompt": "This is for a special board session, not our normal quarterly update. Review solace_security_board_deck.md and tell me if it's ready to send.",
+      "expected_output": "A calibrated ready-to-send or ready-after-minor-fixes review that recognizes a decision-complete special-topic pre-read. It should verify the arithmetic and evidence, credit the alternatives and downside trigger, and avoid demanding unrelated company strategy, competition, quarterly metrics, or cash sections.",
+      "files": [
+        "evals/files/solace_security_board_deck.md"
+      ],
+      "expectations": [
+        "Classifies the material as a special-topic board decision and does not require a company-wide strategy spine, competitive update, quarterly dashboard, or runway section",
+        "Credits the clear $850K recommendation, October 30 decision date, CFO budget owner, and VP Engineering delivery owner",
+        "Verifies that $3.8M of prospect ARR plus $620K of renewal ARR equals the stated $4.42M at risk",
+        "Credits the options table for showing cost, timing, coverage, and principal risk rather than demanding that management pretend there is only one option",
+        "Treats the architecture spike, external review, named workstreams, and contingency as credible quantified planning evidence without claiming they guarantee delivery",
+        "Credits the February 15 validation threshold and $280K pause as a concrete downside trigger",
+        "Finds no material internal contradiction or undecidable ask",
+        "Gives a ready-to-send or ready-after-small-fixes verdict and does not manufacture findings for omitted quarterly sections",
+        "Keeps any copy suggestions subordinate to decision readiness",
+        "Does not create a review file"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "pptx-visual-and-speaker-notes",
+      "prompt": "Review the attached Lumen board slide excerpt before it goes into the Q3 pre-read. The file is lumen_visual_board_excerpt.pptx. Check the slide itself and the speaker notes, not just extracted text.",
+      "expected_output": "A visual-first review that catches the chart/headline contradiction, extracts the quantified diagnosis from speaker notes, recommends moving the honest evidence onto the slide, and does not confuse NRR with logo churn or overstate an observed association as proven causation.",
+      "files": [
+        "evals/files/lumen_visual_board_excerpt.pptx"
+      ],
+      "expectations": [
+        "Inspects the rendered native chart and states that monthly logo churn rises from 1.4% in July to 1.9% in August and 2.8% in September",
+        "Flags that the headline 'Monthly logo churn stabilized in Q3' contradicts the chart",
+        "Flags that 'no additional action is required' is unsupported and inconsistent with the worsening trend",
+        "Reads the speaker notes and cites the 31-of-44 uncertified accounts and 3.4x cancellation-rate evidence",
+        "Recommends moving the material diagnosis from the notes onto the pre-read slide rather than saving it only for questions",
+        "Treats the certification pattern as strong quantified evidence or a hypothesis requiring response, not automatic proof that certification caused the cancellations",
+        "Does not use 106% net revenue retention to dismiss the rising logo-churn trend because the metrics have different definitions and denominators",
+        "Provides a precise deck edit or asks for the final management conclusion if the cause is not yet established",
+        "Prioritizes the visual contradiction and hidden evidence above cosmetic wording",
+        "Does not create a review file"
       ]
     }
   ]
