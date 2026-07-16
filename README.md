@@ -68,3 +68,15 @@ skills/board-deck-review/SKILL.md   # the skill
 .claude-plugin/                     # Claude Desktop plugin marketplace manifests
 evals/                              # Markdown and PowerPoint fixtures plus behavioral expectations
 ```
+
+## Releasing
+
+The `Release Claude plugin` GitHub Actions workflow runs on every push to `main`. It validates that `.claude-plugin/plugin.json` and the plugin entry in `.claude-plugin/marketplace.json` declare the same name and semantic version, then creates and pushes the annotated tag Claude Desktop expects:
+
+```text
+board-deck-review--v<version>
+```
+
+If the version in the manifests has not been released yet, the workflow tags it as-is. Otherwise it increments the patch component in both manifests, commits the version bump to `main`, and tags that commit. A rerun against an already-tagged release is a successful no-op.
+
+To choose a new minor or major version, update the version in both manifests before pushing. Because automatic patch releases add a version-bump commit to `main`, pull or rebase before your next push.

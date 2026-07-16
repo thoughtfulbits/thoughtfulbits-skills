@@ -1,0 +1,171 @@
+name: Release Claude plugin
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: plugin-release-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  tag-release:
+    name: Tag plugin release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Prepare release
+        id: release
+        shell: bash
+        run: |
+          git fetch origin main --tags
+          git checkout --detach origin/main
+
+          metadata="$(node <<'NODE'
+          const fs = require("node:fs");
+
+          const plugin = JSON.parse(
+            fs.readFileSync(".claude-plugin/plugin.json", "utf8"),
+          );
+          const marketplace = JSON.parse(
+            fs.readFileSync(".claude-plugin/marketplace.json", "utf8"),
+          );
+          const entry = marketplace.plugins?.find(
+            (candidate) => candidate.name === plugin.name,
+          );
+
+          if (!entry) {
+            throw new Error(
+              `Marketplace does not contain plugin ${JSON.stringify(plugin.name)}`,
+            );
+          }
+          if (entry.version !== plugin.version) {
+            throw new Error(
+              `Version mismatch: plugin.json=${plugin.version}, marketplace.json=${entry.version}`,
+            );
+          }
+          if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(plugin.name)) {
+            throw new Error(`Invalid plugin name: ${JSON.stringify(plugin.name)}`);
+          }
+          if (
+            !/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/.test(
+              plugin.version,
+            )
+          ) {
+            throw new Error(`Invalid semantic version: ${JSON.stringify(plugin.version)}`);
+          }
+
+          const tag = `${plugin.name}--v${plugin.version}`;
+          process.stdout.write(`${plugin.name}\t${plugin.version}\t${tag}`);
+          NODE
+          )"
+
+          IFS=$'\t' read -r plugin_name plugin_version current_tag <<< "${metadata}"
+          head_commit="$(git rev-parse HEAD)"
+
+          if ! git show-ref --verify --quiet "refs/tags/${current_tag}"; then
+            {
+              echo "should_release=true"
+              echo "needs_commit=false"
+              echo "name=${plugin_name}"
+              echo "version=${plugin_version}"
+              echo "tag=${current_tag}"
+            } >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          tagged_commit="$(git rev-list -n 1 "${current_tag}")"
+          if [[ "${tagged_commit}" == "${head_commit}" ]]; then
+            {
+              echo "should_release=false"
+              echo "needs_commit=false"
+              echo "name=${plugin_name}"
+              echo "version=${plugin_version}"
+              echo "tag=${current_tag}"
+            } >> "${GITHUB_OUTPUT}"
+            echo "::notice title=Release already current::${current_tag} already points to ${head_commit}; no release is needed."
+            {
+              echo "### Release already current"
+              echo
+              echo "\`${current_tag}\` already points to \`${head_commit}\`."
+            } >> "${GITHUB_STEP_SUMMARY}"
+            exit 0
+          fi
+
+          next_version="$(CURRENT_VERSION="${plugin_version}" node <<'NODE'
+          const fs = require("node:fs");
+
+          const match = process.env.CURRENT_VERSION.match(/^(\d+)\.(\d+)\.(\d+)$/);
+          if (!match) {
+            throw new Error(
+              `Automatic patch bumps require a stable x.y.z version; received ${JSON.stringify(process.env.CURRENT_VERSION)}`,
+            );
+          }
+
+          const nextVersion = `${match[1]}.${match[2]}.${Number(match[3]) + 1}`;
+          const pluginPath = ".claude-plugin/plugin.json";
+          const marketplacePath = ".claude-plugin/marketplace.json";
+          const plugin = JSON.parse(fs.readFileSync(pluginPath, "utf8"));
+          const marketplace = JSON.parse(fs.readFileSync(marketplacePath, "utf8"));
+          const entry = marketplace.plugins.find(
+            (candidate) => candidate.name === plugin.name,
+          );
+
+          plugin.version = nextVersion;
+          entry.version = nextVersion;
+          fs.writeFileSync(pluginPath, `${JSON.stringify(plugin, null, 2)}\n`);
+          fs.writeFileSync(marketplacePath, `${JSON.stringify(marketplace, null, 2)}\n`);
+          process.stdout.write(nextVersion);
+          NODE
+          )"
+          next_tag="${plugin_name}--v${next_version}"
+
+          if git show-ref --verify --quiet "refs/tags/${next_tag}"; then
+            echo "::error title=Next release tag already exists::${next_tag} already exists. Bump the manifest version manually to restore a monotonic release sequence."
+            exit 1
+          fi
+
+          {
+            echo "should_release=true"
+            echo "needs_commit=true"
+            echo "name=${plugin_name}"
+            echo "version=${next_version}"
+            echo "tag=${next_tag}"
+          } >> "${GITHUB_OUTPUT}"
+
+      - name: Commit, tag, and publish release
+        if: steps.release.outputs.should_release == 'true'
+        env:
+          NEEDS_COMMIT: ${{ steps.release.outputs.needs_commit }}
+          PLUGIN_NAME: ${{ steps.release.outputs.name }}
+          PLUGIN_VERSION: ${{ steps.release.outputs.version }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [[ "${NEEDS_COMMIT}" == "true" ]]; then
+            git add .claude-plugin/plugin.json .claude-plugin/marketplace.json
+            git commit -m "Release ${PLUGIN_NAME} ${PLUGIN_VERSION}"
+          fi
+
+          release_commit="$(git rev-parse HEAD)"
+          git tag -a "${RELEASE_TAG}" "${release_commit}" -m "${PLUGIN_NAME} ${PLUGIN_VERSION}"
+          git push --atomic origin "HEAD:refs/heads/main" "refs/tags/${RELEASE_TAG}"
+
+          {
+            echo "### Plugin release tagged"
+            echo
+            echo "Created \`${RELEASE_TAG}\` at \`${release_commit}\`."
+          } >> "${GITHUB_STEP_SUMMARY}"
