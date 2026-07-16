@@ -1,6 +1,6 @@
 # Board Deck Review — a Claude skill
 
-Pre-reviews a B2B SaaS board deck **before** it goes to the board, so the board never sees the weak version. Point Claude at your deck (`.pptx`, `.pdf`, `.md`, or pasted text) and it reviews the deck the way your toughest board member would — then tells you exactly what to fix.
+Pre-reviews a B2B SaaS board deck **before** it goes to the board, so the board never sees the weak version. Point Claude at your deck (`.pptx`, `.pdf`, `.docx`, `.md`, or pasted text) and it reviews the deck the way your toughest board member would — then tells you exactly what to fix.
 
 ## What it checks
 
@@ -32,12 +32,19 @@ Paste `https://github.com/thoughtfulbits/board-deck-review-skill` into Claude Co
 
 ```bash
 git clone https://github.com/thoughtfulbits/board-deck-review-skill.git
+mkdir -p ~/.claude/skills
 cp -r board-deck-review-skill/skills/board-deck-review ~/.claude/skills/
 ```
 
 ### claude.ai
 
-Zip the `skills/board-deck-review/` folder and upload it under **Settings → Capabilities → Skills**.
+Enable **Code execution and file creation** under **Settings → Capabilities**. Then package and upload the skill:
+
+```bash
+(cd skills && zip -r ../board-deck-review.zip board-deck-review)
+```
+
+In Claude, go to **Customize → Skills → + → Create skill → Upload a skill**, then select `board-deck-review.zip`.
 
 ## Use
 
