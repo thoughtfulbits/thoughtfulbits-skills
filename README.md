@@ -1,6 +1,38 @@
-# Board Deck Review — a Claude skill
+# Board Deck Review — a Claude Desktop plugin
 
-Pre-reviews a B2B SaaS board deck **before** it goes to the board, so the board never sees the weak version. Point Claude at your deck (`.pptx`, `.pdf`, `.docx`, `.md`, or pasted text) and it reviews the material the way your toughest constructive board member would — then tells you exactly what to fix.
+Installs a board-specific review skill in Claude Desktop. Point Claude at your B2B SaaS board deck (`.pptx`, `.pdf`, `.docx`, `.md`, or pasted text) and it reviews the material the way your toughest constructive board member would — then tells you exactly what to fix before the board sees it.
+
+## Install in Claude Desktop
+
+No terminal is required. Add the public GitHub repository to Claude Desktop as a plugin marketplace:
+
+1. Open Claude Desktop. In the left sidebar, choose **Customize**, then **Plugins**.
+
+   ![Claude Desktop Plugins settings with Customize and Plugins highlighted](docs/images/claude-desktop-1-open-plugins.png)
+
+2. Click **Add**, then choose **Add marketplace**.
+
+   ![The Add menu in Claude Desktop with Add marketplace highlighted](docs/images/claude-desktop-2-add-marketplace.png)
+
+3. Choose **Add from a repository**.
+
+   ![The Add marketplace dialog with Add from a repository highlighted](docs/images/claude-desktop-3-add-repository.png)
+
+4. Paste this public GitHub URL, then click **Sync**:
+
+   ```text
+   https://github.com/thoughtfulbits/board-deck-review-skill
+   ```
+
+   ![The GitHub repository URL entered in Claude Desktop with Sync highlighted](docs/images/claude-desktop-4-sync-github.png)
+
+5. Claude adds and enables **Board deck review**. Confirm that its toggle is on.
+
+   ![Board deck review installed and enabled in Claude Desktop](docs/images/claude-desktop-5-plugin-enabled.png)
+
+That is the entire installation. Start a new Claude Desktop chat, attach your deck, and ask:
+
+> "Review this board deck before it goes out. Tell me what to fix."
 
 ## What it checks
 
@@ -17,40 +49,11 @@ Pre-reviews a B2B SaaS board deck **before** it goes to the board, so the board 
 
 The output is a structured report with a verdict, board-level takeaways, decision-readiness table, material findings, quantitative reconciliation, section-by-section evidence analysis, the questions the board will ask, and a prioritized action list. It does not create a review file unless you ask for one.
 
-## Install
-
-### Claude Code — from this repo's URL
-
-```
-/plugin marketplace add thoughtfulbits/board-deck-review-skill
-/plugin install board-deck-review@board-deck-review
-```
-
-### Or paste the URL into a Claude chat
-
-Paste `https://github.com/thoughtfulbits/board-deck-review-skill` into Claude Code and ask it to install the skill — it will copy `skills/board-deck-review/` into `~/.claude/skills/`.
-
-### Manual
-
-```bash
-git clone https://github.com/thoughtfulbits/board-deck-review-skill.git
-mkdir -p ~/.claude/skills
-cp -r board-deck-review-skill/skills/board-deck-review ~/.claude/skills/
-```
-
-### claude.ai
-
-Enable **Code execution and file creation** under **Settings → Capabilities**. Then package and upload the skill:
-
-```bash
-(cd skills && zip -r ../board-deck-review.zip board-deck-review)
-```
-
-In Claude, go to **Customize → Skills → + → Create skill → Upload a skill**, then select `board-deck-review.zip`.
-
 ## Use
 
-> "Our Q3 board meeting is Thursday — review my board deck before I send it. It's at ~/Desktop/q3-board-deck.pptx"
+Start a new Claude Desktop chat, attach your deck, and ask:
+
+> "Our Q3 board meeting is Thursday — review this board deck before I send it."
 
 > "Pre-review this board deck like a tough board member. Anything in here that gets us grilled?"
 
@@ -62,6 +65,6 @@ The skill is deliberately board-specific. General fundraising and investor updat
 
 ```
 skills/board-deck-review/SKILL.md   # the skill
-.claude-plugin/                     # plugin + marketplace manifests (one-URL install)
+.claude-plugin/                     # Claude Desktop plugin marketplace manifests
 evals/                              # Markdown and PowerPoint fixtures plus behavioral expectations
 ```
