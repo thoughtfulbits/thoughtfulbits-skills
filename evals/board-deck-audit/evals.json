@@ -1,13 +1,13 @@
 {
-  "skill_name": "board-deck-review",
+  "skill_name": "board-deck-audit",
   "evals": [
     {
       "id": 0,
       "name": "jargon-heavy-evidence-free",
-      "prompt": "I'm the CEO of Meridian, a logistics SaaS company. Our Q3 board meeting is next Thursday and I need to send the deck to the board tomorrow night. Can you review it before it goes out? The deck is at evals/files/meridian_q3_board_deck.md. Tell me what to fix.",
+      "prompt": "I'm the CEO of Meridian, a logistics SaaS company. Our Q3 board meeting is next Thursday and I need to send the deck to the board tomorrow night. Can you review it before it goes out? The deck is at evals/board-deck-audit/files/meridian_q3_board_deck.md. Tell me what to fix.",
       "expected_output": "A grounded needs-revision review that prioritizes missing strategy, unsupported roadmap bets, undiagnosed churn, cash uncertainty, and an undecidable option-pool ask ahead of jargon cleanup. It should distinguish unavailable comparison evidence from actual selective disclosure and give specific deck-edit, analysis-required, and decision-preparation actions.",
       "files": [
-        "evals/files/meridian_q3_board_deck.md"
+        "evals/board-deck-audit/files/meridian_q3_board_deck.md"
       ],
       "expectations": [
         "Flags at least three distinct buzzword phrases by quoting the deck and either rewrites a supported underlying claim or asks management to establish the claim first",
@@ -28,7 +28,7 @@
       "prompt": "here's our q2 board deck — harbor_q2_board_deck.md. pre-review it like a tough board member would. we send friday. anything in here that gets us grilled?",
       "expected_output": "A calibrated review that credits the strong strategy sentence, product evidence, Gusto loss analysis, gross-margin explanation, and attrition diagnosis while isolating the unsupported Harbor Capital bet, hollow churn explanation, unquantified competition claim, and unverifiable runway. The verdict should call for targeted fixes rather than reject the deck wholesale.",
       "files": [
-        "evals/files/harbor_q2_board_deck.md"
+        "evals/board-deck-audit/files/harbor_q2_board_deck.md"
       ],
       "expectations": [
         "Passes the slide-2 strategy sentence as a clear customer-pain and solution-mechanism statement",
@@ -49,7 +49,7 @@
       "prompt": "Our annual plan board meeting is in two weeks. Please review the attached 2027 plan deck (quarry_annual_plan_deck.md) before it goes to the board — flag anything that's unclear, unsupported, or that will invite hard questions.",
       "expected_output": "An annual-plan review that passes the strategy spine and well-supported budget choices, challenges shallow sales causality and the unexplained GTM reorganization, tests the forecast assumptions and downside case, respects the product deep-dive pointer, and marks the pricing-floor approval undecidable from the deck.",
       "files": [
-        "evals/files/quarry_annual_plan_deck.md"
+        "evals/board-deck-audit/files/quarry_annual_plan_deck.md"
       ],
       "expectations": [
         "Passes the strategy sentence because it states the customer pain, solution mechanism, and customer outcome",
@@ -70,7 +70,7 @@
       "prompt": "We have a financing committee call on Monday. Review cairn_financing_board_deck.md as a board pre-read and tell me what has to change before I send it.",
       "expected_output": "A needs-revision financing review that shows the runway arithmetic, incorporates the planned hiring step-up, challenges the unsupported 24-month and breakeven claims, and turns the blanket fundraising authorization into a decision-ready request with alternatives, guardrails, downside triggers, and accountable owners.",
       "files": [
-        "evals/files/cairn_financing_board_deck.md"
+        "evals/board-deck-audit/files/cairn_financing_board_deck.md"
       ],
       "expectations": [
         "Calculates that $8.4M divided by $900K monthly burn is about 9.3 months, not the stated 14 months",
@@ -91,8 +91,8 @@
       "prompt": "Please pressure-test our Q4 board deck against the prior quarter. The current deck is northstar_q4_board_deck.md and the prior deck is northstar_q3_board_deck.md. I especially want to know if we're grading ourselves honestly.",
       "expected_output": "A cross-period accountability review that uses the prior deck as evidence: it should pass the stable strategy spine, catch the switch from gross revenue retention to logo retention, close each prior commitment, reconcile cash and runway, credit the strong implementation diagnosis, and distinguish pilot evidence from unvalidated full-rollout results.",
       "files": [
-        "evals/files/northstar_q4_board_deck.md",
-        "evals/files/northstar_q3_board_deck.md"
+        "evals/board-deck-audit/files/northstar_q4_board_deck.md",
+        "evals/board-deck-audit/files/northstar_q3_board_deck.md"
       ],
       "expectations": [
         "Passes the unchanged Northstar strategy spine and does not make it a top finding",
@@ -113,7 +113,7 @@
       "prompt": "This is for a special board session, not our normal quarterly update. Review solace_security_board_deck.md and tell me if it's ready to send.",
       "expected_output": "A calibrated ready-to-send or ready-after-minor-fixes review that recognizes a decision-complete special-topic pre-read. It should verify the arithmetic and evidence, credit the alternatives and downside trigger, and avoid demanding unrelated company strategy, competition, quarterly metrics, or cash sections.",
       "files": [
-        "evals/files/solace_security_board_deck.md"
+        "evals/board-deck-audit/files/solace_security_board_deck.md"
       ],
       "expectations": [
         "Classifies the material as a special-topic board decision and does not require a company-wide strategy spine, competitive update, quarterly dashboard, or runway section",
@@ -134,7 +134,7 @@
       "prompt": "Review the attached Lumen board slide excerpt before it goes into the Q3 pre-read. The file is lumen_visual_board_excerpt.pptx. Check the slide itself and the speaker notes, not just extracted text.",
       "expected_output": "A visual-first review that catches the chart/headline contradiction, extracts the quantified diagnosis from speaker notes, recommends moving the honest evidence onto the slide, and does not confuse NRR with logo churn or overstate an observed association as proven causation.",
       "files": [
-        "evals/files/lumen_visual_board_excerpt.pptx"
+        "evals/board-deck-audit/files/lumen_visual_board_excerpt.pptx"
       ],
       "expectations": [
         "Inspects the rendered native chart and states that monthly logo churn rises from 1.4% in July to 1.9% in August and 2.8% in September",

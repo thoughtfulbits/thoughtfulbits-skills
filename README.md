@@ -1,6 +1,15 @@
-# Board Deck Review — a Claude Desktop plugin
+# ThoughtfulBits Skills — a Claude Desktop plugin
 
-Installs a board-specific review skill in Claude Desktop. Point Claude at your B2B SaaS board deck (`.pptx`, `.pdf`, `.docx`, `.md`, or pasted text) and it reviews the material the way your toughest constructive board member would — then tells you exactly what to fix before the board sees it.
+Four review skills for B2B SaaS product and board leaders, installable in Claude Desktop with one click:
+
+| Skill | Use it when you want… |
+| --- | --- |
+| **board-deck-audit** | A deep, structured pre-send audit of a board deck: claim ledger, reconciled math, evidence grading, and a prioritized fix list |
+| **board-feedback** | The concise reaction a sharp director would give: does this deck make sense? One screen, no tables |
+| **product-plan-feedback** | A product plan, roadmap, launch plan, or GTM plan graded against a key-milestone rubric |
+| **product-feature-feedback** | A single feature or product scored with the [SPARK method](https://www.thoughtfulbits.me/p/boring-apps-add-some-spark): Simple, Purposeful, Attractive, Reliable, Known |
+
+Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, or pasted text, and ask in plain language — the right skill triggers from what you ask for.
 
 ## Install in Claude Desktop
 
@@ -21,52 +30,66 @@ No terminal is required. Add the public GitHub repository to Claude Desktop as a
 4. Paste this public GitHub URL, then click **Sync**:
 
    ```text
-   https://github.com/thoughtfulbits/board-deck-review-skill
+   https://github.com/thoughtfulbits/thoughtfulbits-skills
    ```
 
    ![The GitHub repository URL entered in Claude Desktop with Sync highlighted](docs/images/claude-desktop-4-sync-github.png)
 
-5. Claude adds and enables **Board deck review**. Confirm that its toggle is on.
+5. Claude adds and enables **ThoughtfulBits Skills**. Confirm that its toggle is on.
 
-   ![Board deck review installed and enabled in Claude Desktop](docs/images/claude-desktop-5-plugin-enabled.png)
+   ![The plugin installed and enabled in Claude Desktop](docs/images/claude-desktop-5-plugin-enabled.png)
 
-That is the entire installation. Start a new Claude Desktop chat, attach your deck, and ask:
+   *The screenshots in steps 4–5 show this plugin's previous name, Board deck review; you will see ThoughtfulBits Skills.*
 
-> "Review this board deck before it goes out. Tell me what to fix."
+That is the entire installation. Start a new Claude Desktop chat, attach your material, and ask.
 
-## What it checks
+## The four skills
 
-1. **Pre-read and visual clarity** — renders the slides, reads speaker notes, and checks that chart axes, labels, footnotes, and takeaways support what the slide claims.
-2. **Strategy spine and coherence** — tests the plain customer-pain/solution sentence, then checks whether product, GTM, hiring, and budget choices actually reinforce it.
-3. **Quantitative reconciliation** — recalculates runway, totals, percentages, periods, denominators, plan-vs.-actual results, and cross-slide assumptions instead of accepting stated math at face value.
-4. **Evidence and causality** — separates unsupported claims, anecdotes, quantified patterns, and validated causes. Correlation does not silently become causation.
-5. **Customer evidence behind product plans** — asks what customers did or said, how broad the evidence is, and what proof point comes next. TAM projections alone do not count.
-6. **Competitive reality** — checks competitors and alternatives against win/loss, pricing, sales-cycle, churn, and product evidence elsewhere in the deck.
-7. **What, why, evidence, and response** — every material result needs a real cause, supporting evidence, an owner, timing, and a success measure.
-8. **Accountability, forecasts, and risk** — grades commitments when prior materials are supplied and tests future assumptions, downside cases, mitigations, and change-course triggers.
-9. **Cash and decision readiness** — reconciles burn and runway, then separates decisions, advice, help, and FYI so every approval ask is actually decidable.
-10. **Actionable recommendations** — classifies each fix as a deck edit, analysis required, or decision preparation and ranks it as must fix, should improve, or prepare to answer.
+### board-deck-audit
 
-The output is a structured report with a verdict, board-level takeaways, decision-readiness table, material findings, quantitative reconciliation, section-by-section evidence analysis, the questions the board will ask, and a prioritized action list. It does not create a review file unless you ask for one.
+The last tough, constructive reader before the board sees the deck. It renders every slide (including charts and speaker notes), builds a claim ledger, recalculates the math the deck asks the board to accept, grades every explanation's evidence, and separates decisions from FYIs — then delivers a full report with a verdict and a must-fix / should-improve / prepare-to-answer action list.
 
-## Use
+> "Our Q3 board meeting is Thursday — audit this deck before I send it."
 
-Start a new Claude Desktop chat, attach your deck, and ask:
-
-> "Our Q3 board meeting is Thursday — review this board deck before I send it."
-
-> "Pre-review this board deck like a tough board member. Anything in here that gets us grilled?"
+> "Pressure-test this board deck like a tough board member. Anything in here that gets us grilled?"
 
 > "Compare this quarter's deck with the prior board pack and tell me whether we're grading ourselves honestly."
 
-The skill is deliberately board-specific. General fundraising and investor updates use different disclosure and decision standards and are outside its trigger unless they are explicitly board materials.
+### board-feedback
+
+The quick read. It answers one question — *does this deck make sense?* — the way an experienced director would after reading the pre-read the night before the meeting: an overall reaction, what directors will say in the room, the questions you'll get, and a makes-sense verdict. One screen, no audit tables. When the deck needs the deep pass, it says so and points to board-deck-audit.
+
+> "Gut check before I polish this any further — does this deck make sense?"
+
+> "If you were on my board, what would you say in the meeting?"
+
+### product-plan-feedback
+
+Grades a product plan against a key-milestone rubric: a strategy simple enough to repeat without you in the room that solves a problem customers already know they have; explicit executors, beneficiaries, and champions; a roadmap that makes value visible and shareable; weekly-improving metrics; design-partner go/no-go hurdles; an into-orbit GTM funnel; positioning, competitors, and pricing tiers. Scoped to the document — a roadmap-only doc is not failed for omitting GTM.
+
+> "Review our FY27 product plan before the offsite. Where does it fall short?"
+
+> "This is only our H2 roadmap — review it against your product-plan standards."
+
+### product-feature-feedback
+
+Scores a single feature or product 1–5 on each SPARK dimension — **S**imple, **P**urposeful & Prioritized, **A**ttractive & Attentive, **R**eliable, **K**nown — with cited evidence, then recommends the cut list, one delight moment to design, and the three simplest improvements. 25 is optimal; 18–24 calls for focused iteration; below 18 means halt new features and rebuild foundations.
+
+> "SPARK-score this feature spec before we commit the quarter to it."
+
+> "Why does our app feel boring? Run your SPARK review on it."
+
+## Upgrading from board-deck-review
+
+This plugin was previously published as **Board deck review** (`board-deck-review`). The old GitHub URL redirects here, so an already-added marketplace keeps syncing; after the next sync, enable **ThoughtfulBits Skills** and remove the defunct **Board deck review** entry. If the sync doesn't pick up the rename, remove the marketplace and re-add it at the URL above.
 
 ## Repo layout
 
 ```
-skills/board-deck-review/SKILL.md   # the skill
-.claude-plugin/                     # Claude Desktop plugin marketplace manifests
-evals/                              # Markdown and PowerPoint fixtures plus behavioral expectations
+skills/<skill-name>/SKILL.md   # the four skills
+.claude-plugin/                # Claude Desktop plugin marketplace manifests
+evals/<skill-name>/            # per-skill eval suites and fixtures
+docs/images/                   # install walkthrough screenshots
 ```
 
 ## Releasing
@@ -74,7 +97,7 @@ evals/                              # Markdown and PowerPoint fixtures plus beha
 The `Release Claude plugin` GitHub Actions workflow runs on every push to `main`. It validates that `.claude-plugin/plugin.json` and the plugin entry in `.claude-plugin/marketplace.json` declare the same name and semantic version, then creates and pushes the annotated tag Claude Desktop expects:
 
 ```text
-board-deck-review--v<version>
+thoughtfulbits-skills--v<version>
 ```
 
 If the version in the manifests has not been released yet, the workflow tags it as-is. Otherwise it increments the patch component in both manifests, commits the version bump to `main`, and tags that commit. A rerun against an already-tagged release is a successful no-op.

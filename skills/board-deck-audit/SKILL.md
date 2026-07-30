@@ -1,13 +1,13 @@
 ---
-name: board-deck-review
-description: "Pre-review B2B SaaS board decks before they are sent to the board. Tests whether the pre-read stands alone, states a clear strategy spine, reconciles metrics and assumptions across slides, explains results with credible evidence, shows plan-vs-actual accountability, presents competition and risks honestly, makes cash and runway math explicit, and gives the board decision-ready asks. Use whenever the user wants a board deck, board update, board pre-read, annual plan, financing deck, or special-topic board materials reviewed, critiqued, pressure-tested, or checked before sending — even if they only say 'take a look at my board deck' or attach board materials as a .pptx, .pdf, .md, or .docx. Do not use for fundraising or general investor updates unless they are explicitly board materials."
+name: board-deck-audit
+description: "Deep audit of B2B SaaS board decks before they go to the board. Builds a claim ledger, tests whether the pre-read stands alone and states a clear strategy spine, reconciles metrics and assumptions across slides, explains results with credible evidence, shows plan-vs-actual accountability, presents competition and risks honestly, makes cash and runway math explicit, and gives the board decision-ready asks. Use whenever a board deck, board update, board pre-read, annual plan or budget, financing deck, or special-topic board materials need a deep audit, review, or pressure-test before sending — even if the user only says 'take a look at my board deck' or attaches board materials as .pptx, .pdf, .md, or .docx. For a quick gut check — 'what will the board think', 'does this make sense' — use board-feedback. Not for product plans or roadmaps (product-plan-feedback), features or PRDs (product-feature-feedback), or fundraising and investor updates unless they are explicitly board materials."
 ---
 
-# Board Deck Pre-Review
+# Board Deck Audit
 
 Act as the last tough, constructive reader before the board sees the deck. Review substance rather than polish: what happened, why it happened, what management believes, what it will do next, and what the board is being asked to decide.
 
-The review should increase trust and improve the meeting. Find material gaps without manufacturing criticism, distinguish facts from hypotheses, and give management an actionable path to fix each important issue.
+The review should increase trust and improve the meeting. Find material gaps without manufacturing criticism, distinguish facts from hypotheses, and give management an actionable path to fix each important issue. This is the deep pass — a full structured audit with a claim ledger and reconciliation tables; when the user only wants a quick director's reaction, the board-feedback skill covers that.
 
 ## 1. Read the complete evidence set
 
@@ -139,7 +139,7 @@ State confidence when a finding depends on incomplete evidence. Do not invent th
 Use this structure, omitting only sections that genuinely do not apply:
 
 ```markdown
-# Pre-review: [deck name] — [meeting type]
+# Audit: [deck name] — [meeting type]
 
 ## Verdict
 **Ready to send** / **Ready after small fixes** / **Needs revision before sending**

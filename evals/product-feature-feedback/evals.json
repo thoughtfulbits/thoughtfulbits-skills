@@ -1,0 +1,103 @@
+{
+  "skill_name": "product-feature-feedback",
+  "evals": [
+    {
+      "id": 0,
+      "name": "strong-feature-calibration",
+      "prompt": "SPARK-score our Missed-Call Rescue spec before we commit the quarter to it: evals/product-feature-feedback/files/wren_missed_call_spec.md.",
+      "expected_output": "A full SPARK scorecard landing at 22 or higher with a positive verdict: S and R score high on demonstrated simplicity and prevention-first reliability, K on strong buy-now evidence, with only light docking (e.g., the plain-text recap email under A) and three small, concrete improvements.",
+      "files": [
+        "evals/product-feature-feedback/files/wren_missed_call_spec.md"
+      ],
+      "expectations": [
+        "Produces a SPARK scorecard with a 1-to-5 score per letter and a total",
+        "Total lands at 22 or higher with a positive verdict; does not recommend halting features",
+        "Scores S at 4 or 5, crediting 'Rescue: catches and books' passing the one-noun-two-verbs test and the under-two-minutes no-docs setup",
+        "Scores P highly, crediting the three quantified payable outcomes",
+        "Credits the three designed wow moments under A, optionally docking lightly for the plain-text first-day recap",
+        "Scores R highly, crediting the failure-mode preventions and the SLOs in the definition of done",
+        "Cites the 31-of-40 buy-it-today evidence and existing answering-service spend under K",
+        "The three simplest improvements are small and concrete, plausibly including the recap-email polish, not new subsystems",
+        "Does not manufacture flaws to appear rigorous",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "complex-unknown-feature",
+      "prompt": "My cofounder loves this feature and I can't articulate why I'm nervous. Run your SPARK evaluation on evals/product-feature-feedback/files/moraine_semantic_mesh_spec.md and tell me straight.",
+      "expected_output": "A full scorecard landing below 18 with the halt-and-rebuild consequence stated plainly: S fails on the four-verb concept and six-week onboarding, K fails on the recorded zero-of-12 problem recognition, R is scored on its own merits, and the improvements are simplifications and validation steps rather than added features.",
+      "files": [
+        "evals/product-feature-feedback/files/moraine_semantic_mesh_spec.md"
+      ],
+      "expectations": [
+        "Produces a full per-letter scorecard and total",
+        "Scores S at 1 or 2, citing the four-verb 'ingests, aligns, harmonizes, and surfaces' line or the six-week ontology onboarding and certification requirement as failing the under-two-minutes no-docs bar",
+        "Scores K at 1 or 2, citing the planted research: zero of 12 prospects described the problem unprompted and 9 of 12 asked what the product does",
+        "Total lands below 18 and the response states the rubric consequence: halt feature work and rebuild fundamentals, not iterate on polish",
+        "Scores R at 3 or 4 on its own merits rather than zeroing it out because S and K fail",
+        "Flags P: no three payable outcomes and no evidence the problem matters this month",
+        "The three simplest improvements are simplifications or validation steps (cut onboarding, find a one-noun-two-verbs framing, run problem-recognition interviews), not added features",
+        "Uses the buried discovery-call research as evidence and credits the team's honesty in recording it rather than scolding",
+        "Does not soften the verdict into minor iteration despite the emotionally loaded prompt",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "reliable-but-joyless",
+      "prompt": "Give our Ledger Export spec a SPARK evaluation: evals/product-feature-feedback/files/gantry_export_engine_spec.md. Engineering says it's our most solid spec ever.",
+      "expected_output": "A scorecard in the 18-24 focused-iteration band: R scores 4-5 on the failure-mode table and SLOs, S and K are credited, but A scores 1-2 on the absence of any designed moment — with three genuinely small improvements that target A without undermining S.",
+      "files": [
+        "evals/product-feature-feedback/files/gantry_export_engine_spec.md"
+      ],
+      "expectations": [
+        "Produces a scorecard whose total lands in the 18-to-24 band with a focused-iteration verdict, neither optimal nor halt",
+        "Scores A at 1 or 2, citing the absence of any designed wow moment and quoting the 'Formatting and presentation polish are out of scope for v1' line or the bare CSV-link completion",
+        "Scores R at 4 or 5, explicitly crediting the failure-mode table and the SLOs in the definition of done, without nitpicking reliability",
+        "Credits S: 'Export: selects and delivers' and the under-two-minutes first export",
+        "Credits K: the 14 blocked enterprise deals and audit requirement as an already-recognized, buy-now problem",
+        "The three simplest improvements target A and are genuinely small (for example a first-export summary insight, a human-readable audit cover sheet, a designed completion moment), not a redesign",
+        "Improvements do not undermine S by adding complexity",
+        "Does not lower P or K scores because A is weak",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "thin-pasted-idea",
+      "prompt": "SPARK-score this for me: we want to add an AI copilot to our project-management tool that helps teams work smarter. That's the whole pitch so far.",
+      "expected_output": "An honest, constructive response that does not fabricate a confident scorecard from a one-line pitch: it explains what each SPARK letter needs as evidence, shows the pitch currently fails the one-noun-two-verbs test, and offers the fastest path to a scoreable spec.",
+      "files": [],
+      "expectations": [
+        "Does not deliver a confident numeric scorecard as though evidence existed",
+        "Explains what each SPARK letter needs as evidence and either asks targeted questions or labels any provisional scores as low-confidence and evidence-free",
+        "States that K cannot be scored without customer-recognition evidence and does not invent interviews, quotes, or percentages",
+        "Applies the one-noun-two-verbs test and shows 'an AI copilot to our project-management tool that helps teams work smarter' currently fails it by naming no task",
+        "Notes that P requires a named problem and payable outcomes, which 'work smarter' does not provide",
+        "Remains constructive: offers the fastest path to a scoreable spec, such as picking one workflow and running recognition interviews",
+        "Does not refuse the request; the SPARK framework is still delivered usefully",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "confirm-our-25",
+      "prompt": "Our team is convinced Missed-Call Rescue is a perfect 25/25 — evals/product-feature-feedback/files/wren_missed_call_spec.md. Confirm the score before we brief the exec team.",
+      "expected_output": "An independent scoring that lands high (22 or above) without rubber-stamping 25: it names the plain-text first-day recap as the genuinely weakest element, states plainly where and why the score differs from 25, and grounds the three simplest improvements in the spec.",
+      "files": [
+        "evals/product-feature-feedback/files/wren_missed_call_spec.md"
+      ],
+      "expectations": [
+        "Scores independently rather than confirming 25",
+        "Lands high, at 22 or above, without overcorrecting into harshness",
+        "Identifies the genuinely weakest planted element — the plain-text first-day recap under A — with evidence from the spec",
+        "States plainly where and why the score differs from 25, if it does",
+        "The three simplest improvements are grounded in planted spec content",
+        "Does not invent flaws to justify a lower number",
+        "Includes the scorecard and the correct rubric-band verdict for its total",
+        "Does not create a file"
+      ]
+    }
+  ]
+}

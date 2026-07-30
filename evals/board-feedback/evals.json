@@ -1,0 +1,110 @@
+{
+  "skill_name": "board-feedback",
+  "evals": [
+    {
+      "id": 0,
+      "name": "meridian-does-this-make-sense",
+      "prompt": "I'm Meridian's CEO. Before I polish the Q3 deck any further — evals/board-deck-audit/files/meridian_q3_board_deck.md — I want a gut check. If you were on my board, does this deck make sense to you? What would you say in the meeting?",
+      "expected_output": "A short director's-note reaction with a clear does-not-hold-together verdict, led by at most two headline problems (the content-free strategy and the churn spike contradicting the momentum narrative), a handful of hard director questions, and none of the deep-audit apparatus.",
+      "files": [
+        "evals/board-deck-audit/files/meridian_q3_board_deck.md"
+      ],
+      "expectations": [
+        "Opens with a brief overall reaction and gives an explicit negative makes-sense verdict (the deck does not hold together as written)",
+        "Leads with at most two headline problems, drawn from the buzzword strategy and the churn-versus-momentum contradiction, rather than an exhaustive findings list",
+        "Points out that the North Star slide ('empower enterprises to unlock operational excellence') could describe any company and never says what Meridian does for whom",
+        "Connects the churn jump from 1.9% to 3.1% monthly to the 'hypergrowth momentum' and accelerating-flywheel claims and says a director will ask which story is true",
+        "Includes three to five hardest director questions, at least one about the cause of churn and one about the cash balance behind the 19-month runway or the basis for the 2% option-pool ask",
+        "Treats 'We have no true competitors' as a credibility problem a director will challenge rather than accepting it",
+        "Mentions non-headline issues briefly at most and does not attempt full audit coverage of the deck",
+        "Contains no multi-column audit tables, claim ledger, decision-readiness section, or must-fix/should-improve action lists; the response reads as a short note",
+        "Written in a board member's first-person voice, as reactions and questions rather than a review checklist",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "cairn-committee-gut-check",
+      "prompt": "Quick sanity check before Monday's financing committee: evals/board-deck-audit/files/cairn_financing_board_deck.md. If you were a director on the committee, does this ask make sense as presented? Two minutes of your honest reaction.",
+      "expected_output": "A short, blunt not-ready reaction built on exactly two breaks — the runway arithmetic that doesn't work and the blank-check approval — with the math done in a sentence, no invented terms, and no demands for out-of-scope company sections.",
+      "files": [
+        "evals/board-deck-audit/files/cairn_financing_board_deck.md"
+      ],
+      "expectations": [
+        "Gives an explicit verdict that the ask does not make sense as presented and should not go to the committee in this form",
+        "Does the runway math in prose: $8.4M at $900K per month is roughly nine months, not the stated 14",
+        "Notes that the 18 Q4 hires add $420K per month, making the claimed 24 months of post-raise runway implausible without revenue assumptions the deck never states",
+        "Calls the request to raise 'on terms management deems acceptable' a blank check no director can responsibly approve",
+        "Limits the headline reaction to the cash math and the approval design instead of sprawling into a long findings list",
+        "Hardest questions include what model supports breakeven in March 2028 or revenue offsetting expense by Q2 2027",
+        "Does not fault the special-committee deck for lacking a company strategy sentence, competitive section, or quarterly dashboard",
+        "Does not invent financing terms, valuations, or guardrail numbers on management's behalf",
+        "Contains no audit tables or structured review sections; short, board-member voice throughout",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "northstar-are-we-being-straight",
+      "prompt": "Our lead director reads every deck against the previous one. Here is Q4 (evals/board-deck-audit/files/northstar_q4_board_deck.md) and the Q3 deck she'll have next to it (evals/board-deck-audit/files/northstar_q3_board_deck.md). Gut check: will she think we're being straight with the board?",
+      "expected_output": "A mixed, short verdict: genuinely candid in places (the implementation miss is stated plainly) but with one credibility problem a commitment-tracking director will catch immediately — GRR was committed to and then silently replaced by logo retention — plus runway math that doesn't reconcile.",
+      "files": [
+        "evals/board-deck-audit/files/northstar_q4_board_deck.md",
+        "evals/board-deck-audit/files/northstar_q3_board_deck.md"
+      ],
+      "expectations": [
+        "Gives a mixed verdict in plain terms: candid on the implementation miss but with a credibility problem that must be fixed before sending",
+        "Leads with the metric swap: Q3 committed to keep gross revenue retention above 91%, and Q4 stops reporting it in favor of logo retention",
+        "Flags that $12.2M cash at $1.3M monthly burn is roughly nine to ten months, not the stated 15",
+        "Credits the deck for plainly stating the missed under-45-day implementation commitment as real candor a director will respect",
+        "May note the November 1 rollout commitment landing December 12 ungraded, but keeps it subordinate to the metric swap and runway",
+        "Does not treat the unchanged strategy slide as a finding",
+        "Picks one or two biggest issues rather than producing a commitment-by-commitment audit table",
+        "Contains no audit-format sections or tables; response stays short and conversational",
+        "Written as what the lead director will actually say or ask in the meeting",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "quarry-plan-sanity",
+      "prompt": "Honestly — does our 2027 plan make sense? evals/board-deck-audit/files/quarry_annual_plan_deck.md. What would a good board member push on when we present it?",
+      "expected_output": "A positive makes-sense verdict crediting the clear strategy and evidence-grounded budget, with two or three sharp push-ons concentrated on the win-rate decline's real cause and the asserted recovery assumptions — not a deficiency list.",
+      "files": [
+        "evals/board-deck-audit/files/quarry_annual_plan_deck.md"
+      ],
+      "expectations": [
+        "Gives an explicit positive verdict that the plan fundamentally makes sense and is close to board-ready",
+        "Credits the strategy sentence and the coherence of an execution-year plan built on the same strategy with more territory",
+        "Credits the budget grounding: nine AE hires tied to 40% of inbound from Texas and the Southeast, and the $600K infrastructure spend tied to six of ten large prospects requiring SOC 2 and data residency",
+        "Pushes on the win-rate decline from 29% to 22%: lengthening sales cycles is a second symptom rather than a cause, and the assumed recovery to 26% and 80-day cycles will be the meeting's hardest question",
+        "May question the unexplained September go-to-market reorganization as a likely director question",
+        "Does not fault the deck for deferring product detail to the September deep-dive",
+        "Limits push-ons to two or three items and does not manufacture a long list of nitpicks against a solid plan",
+        "Does not flag the breakeven-at-88%-of-sales-plan statement as a defect",
+        "Contains no audit tables or structured review sections; short, board-member voice",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "solace-be-brutal",
+      "prompt": "Special session pre-read: evals/board-deck-audit/files/solace_security_board_deck.md. Be brutal — what will the board tear apart? I'd rather hear it from you than from them.",
+      "expected_output": "A calibrated positive read that withstands the adversarial framing: the pre-read is decision-complete and there is little to tear apart; remaining items are discussion-prep questions, not deck defects.",
+      "files": [
+        "evals/board-deck-audit/files/solace_security_board_deck.md"
+      ],
+      "expectations": [
+        "Gives a clear positive verdict that the pre-read makes sense and is ready, despite the prompt inviting brutality",
+        "States or clearly implies that there is little for the board to tear apart, rather than manufacturing findings to satisfy the framing",
+        "Respects the special-topic scope and does not demand company strategy, quarterly metrics, competition, or runway sections",
+        "Does not claim an arithmetic error; accepts or verifies that $3.8M plus $620K equals the $4.42M at risk",
+        "Credits the decision completeness: the $850K recommendation, October 30 decision date, named CFO and VP Engineering owners, the three-option table, and the February 15 pause trigger",
+        "Frames any remaining pushback as questions directors may still ask in the room, such as confidence on the uncertain workstreams or slippage past the Q3 2027 renewals, not as deck flaws",
+        "Keeps the response short with no audit tables or review-report structure",
+        "Written in a board member's voice",
+        "Does not create a file"
+      ]
+    }
+  ]
+}

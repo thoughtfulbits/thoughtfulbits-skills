@@ -1,15 +1,15 @@
 {
-  "name": "board-deck-review",
+  "name": "thoughtfulbits-skills",
   "owner": {
     "name": "Alex Gounares"
   },
-  "description": "ThoughtfulBits' board-deck review skill for B2B SaaS leaders.",
+  "description": "ThoughtfulBits' Claude skills for B2B SaaS product and board leaders.",
   "plugins": [
     {
-      "name": "board-deck-review",
+      "name": "thoughtfulbits-skills",
       "source": "./",
-      "description": "Pre-review B2B SaaS board materials for strategic coherence, reconciled metrics, credible causality, accountable forecasts, cash clarity, and decision-ready asks.",
-      "version": "0.3.0",
+      "description": "ThoughtfulBits review skills for B2B SaaS product and board leaders: board deck audits, board feedback, product plan feedback, and product feature feedback.",
+      "version": "1.0.0",
       "author": {
         "name": "Alex Gounares"
       }

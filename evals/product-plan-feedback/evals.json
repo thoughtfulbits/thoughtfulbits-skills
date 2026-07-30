@@ -1,0 +1,107 @@
+{
+  "skill_name": "product-plan-feedback",
+  "evals": [
+    {
+      "id": 0,
+      "name": "strong-plan-calibration",
+      "prompt": "Here's Alder's FY27 product plan: evals/product-plan-feedback/files/alder_product_plan.md. Review it against your rubric before I take it to our offsite. Where does it fall short?",
+      "expected_output": "A positive, calibrated review that credits a plan covering most rubric areas — the one-sentence strategy, quantified problem evidence, explicit constituents, platform effect, and complete GTM — while identifying the thin community line as the genuinely weakest area and treating the labeled supplier-financing bet as acceptable practice.",
+      "files": [
+        "evals/product-plan-feedback/files/alder_product_plan.md"
+      ],
+      "expectations": [
+        "Gives a positive overall verdict crediting a plan that covers most rubric areas",
+        "Credits the one-sentence strategy as passing the explainability test, quoting or closely paraphrasing it",
+        "Credits the problem evidence: 62 discovery calls, 48 naming invoice errors a top-three pain, 31 already paying a manual audit service",
+        "Recognizes that executor (bookkeeper), beneficiary (owner/CFO), and champion (fractional-CFO firms) are each explicitly articulated",
+        "Credits the platform effect (benchmarks sharpening with each new customer) and/or the document-extraction cost-curve rationale",
+        "Credits GTM completeness: the named ICP, top-5 competitors including the what-operators-ask-AI-assistants lens, one most-significant metric per funnel stage, and the free/credit-card/enterprise pricing structure",
+        "Identifies the community line ('explore an operators' community in H2') as the thinnest area while treating it as minor rather than verdict-changing",
+        "Treats the supplier-financing item as an appropriately labeled bet with a defined proof point, not as a flaw",
+        "Does not manufacture failures for rubric areas the plan actually covers",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "feature-list-not-strategy",
+      "prompt": "Our board asked for a product strategy and this is what my product team produced: evals/product-plan-feedback/files/basalt_product_strategy.md. Evaluate it as a product plan — is it ready?",
+      "expected_output": "A clear negative verdict: this is a feature list, not a strategy — no customer, pain, or mechanism in the mission, no constituents, no evidence, no metrics, no GTM — with the Compliance Evidence Collector identified as the one seed of real substance to rebuild around.",
+      "files": [
+        "evals/product-plan-feedback/files/basalt_product_strategy.md"
+      ],
+      "expectations": [
+        "Gives a clear negative verdict: this is a feature list, not a product plan or strategy, and needs rebuilding rather than editing",
+        "Quotes the mission line ('harnesses agentic AI to unlock workflow intelligence') and shows it fails the one-sentence test by naming no customer, pain, or mechanism",
+        "Flags that no roadmap item names who executes it, who benefits, or who champions it",
+        "Flags 'Enterprises everywhere struggle to keep up with the pace of change' as not evidence of a known, prioritized problem, and notes the document contains zero customer research",
+        "Flags 'We will define success metrics after the platform reaches general availability' as backwards, naming the missing weekly improvement goal, activity metrics with cohorts, and reliability metrics",
+        "Flags 'The platform's virality will drive organic adoption' as an assertion with no ICP, competitors, funnel model, pricing, or content plan behind it",
+        "Notes the absence of design partners and any customer-feedback loop",
+        "Constructively identifies the Compliance Evidence Collector as the one item tied to a real, nameable pain and a candidate seed for a focused strategy",
+        "Does not soften the verdict with praise the document has not earned, while remaining constructive about the path forward",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "hollow-gtm",
+      "prompt": "Review our launch plan (evals/product-plan-feedback/files/tidewater_launch_plan.md). Engineering feels great about it; I'm less sure about how we'll sell it. Full review please.",
+      "expected_output": "A split verdict: the product and roadmap sections are genuinely strong (constituents, evidence, human-override loop, design partners), but the GTM plan needs rebuilding — no ICP, spam-adjacent tactics, refusal to name competitors, contact-sales-only pricing, and a vanity impressions metric.",
+      "files": [
+        "evals/product-plan-feedback/files/tidewater_launch_plan.md"
+      ],
+      "expectations": [
+        "Delivers a split verdict: the product and roadmap sections are strong while the go-to-market plan needs rebuilding, and the verdict reflects both halves",
+        "Credits the strategy sentence and the explicit executor/beneficiary/champion articulation",
+        "Credits the design-partner plan with its go/no-go hurdle and the human confirm/override loop on the booking automation",
+        "Flags 'any business that sends technicians to customers' as the absence of an ICP",
+        "Flags the purchased 50,000-contact list, automated DM sequences, and daily AI-generated posting as spam-adjacent tactics contrary to authentic-content principles, quoting at least one of those lines",
+        "Flags the refusal to name competitors and calls for a top-5 list including what prospects ask AI assistants and a how-would-you-beat answer per competitor",
+        "Flags contact-sales-only pricing against the free/credit-card/enterprise pricing-page expectation and notes that it leaves no self-serve purchase motion (whether framed as missing or as foreclosed by the pricing)",
+        "Flags '1M impressions per quarter' as a vanity metric and calls for two to three most-significant metrics, one per stage of an awareness-orbit-engaged-funnel model",
+        "Does not let the GTM problems erase credit for the product sections",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "partial-scope-roadmap",
+      "prompt": "This is only our H2 engineering roadmap, not the whole company plan: evals/product-plan-feedback/files/ridgeline_h2_roadmap.md. Give it a review against your product-plan standards.",
+      "expected_output": "A positive-leaning review scoped to roadmap quality that honors the stated scope line — GTM, ICP, pricing, and competition are not penalized — credits dual-visibility value, the fast-onboarding goal, and SLOs, and flags the fully-automatic auto-triage and the unmeasurable happiness criterion as the real in-scope gaps.",
+      "files": [
+        "evals/product-plan-feedback/files/ridgeline_h2_roadmap.md"
+      ],
+      "expectations": [
+        "Acknowledges the stated scope line and does not penalize the document for missing GTM, ICP, pricing, competition, or community",
+        "Gives a positive-leaning verdict scoped to roadmap quality",
+        "Credits that roadmap items make value visible to both the executor and the beneficiary",
+        "Credits the under-5-minutes-no-docs onboarding goal and the SLOs written into definitions of done",
+        "Flags auto-triage's fully automatic assignment as missing the human correction/override loop the rubric requires of AI-driven automation",
+        "Flags 'developers are happier' as unmeasurable and asks for an activity metric with cohort analysis for the flaky-test initiative",
+        "Keeps out-of-scope rubric areas out of the verdict, at most noting them as covered elsewhere and worth confirming",
+        "Does not manufacture additional findings to appear thorough",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "airtight-pressure-test",
+      "prompt": "We think the Alder plan is airtight — evals/product-plan-feedback/files/alder_product_plan.md. Grade it against your full rubric and tell me the single weakest area.",
+      "expected_output": "An independent assessment that stays positive without simply confirming 'airtight': it names the community line as the genuinely weakest area, keeps the labeled bet acceptable, and offers small concrete improvements rather than manufactured deficiencies.",
+      "files": [
+        "evals/product-plan-feedback/files/alder_product_plan.md"
+      ],
+      "expectations": [
+        "Scores or assesses the plan independently rather than simply confirming it is airtight",
+        "Identifies the community line as the genuinely weakest rubric area, grounded in the document",
+        "Maintains the positive overall assessment; does not invent larger problems to satisfy the request for a weakness",
+        "Continues to treat the labeled supplier-financing bet as acceptable practice",
+        "Keeps per-rubric-area treatment proportionate, without a manufactured deficiency for each area",
+        "States plainly that the plan is strong but not flawless, naming the delta",
+        "Any improvement suggestions are small and concrete",
+        "Does not create a file"
+      ]
+    }
+  ]
+}
