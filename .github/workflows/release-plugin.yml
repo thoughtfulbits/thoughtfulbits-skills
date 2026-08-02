@@ -1,4 +1,4 @@
-name: Release Claude plugin
+name: Release plugin
 
 on:
   push:
@@ -30,12 +30,16 @@ jobs:
         run: |
           git fetch origin main --tags
           git checkout --detach origin/main
+          node scripts/validate-openai-plugin.mjs
 
           metadata="$(node <<'NODE'
           const fs = require("node:fs");
 
           const plugin = JSON.parse(
             fs.readFileSync(".claude-plugin/plugin.json", "utf8"),
+          );
+          const openai = JSON.parse(
+            fs.readFileSync(".codex-plugin/plugin.json", "utf8"),
           );
           const marketplace = JSON.parse(
             fs.readFileSync(".claude-plugin/marketplace.json", "utf8"),
@@ -52,6 +56,16 @@ jobs:
           if (entry.version !== plugin.version) {
             throw new Error(
               `Version mismatch: plugin.json=${plugin.version}, marketplace.json=${entry.version}`,
+            );
+          }
+          if (openai.name !== plugin.name) {
+            throw new Error(
+              `Name mismatch: Claude=${plugin.name}, OpenAI=${openai.name}`,
+            );
+          }
+          if (openai.version !== plugin.version) {
+            throw new Error(
+              `Version mismatch: Claude=${plugin.version}, OpenAI=${openai.version}`,
             );
           }
           if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(plugin.name)) {
@@ -115,16 +129,20 @@ jobs:
           const nextVersion = `${match[1]}.${match[2]}.${Number(match[3]) + 1}`;
           const pluginPath = ".claude-plugin/plugin.json";
           const marketplacePath = ".claude-plugin/marketplace.json";
+          const openaiPath = ".codex-plugin/plugin.json";
           const plugin = JSON.parse(fs.readFileSync(pluginPath, "utf8"));
           const marketplace = JSON.parse(fs.readFileSync(marketplacePath, "utf8"));
+          const openai = JSON.parse(fs.readFileSync(openaiPath, "utf8"));
           const entry = marketplace.plugins.find(
             (candidate) => candidate.name === plugin.name,
           );
 
           plugin.version = nextVersion;
           entry.version = nextVersion;
+          openai.version = nextVersion;
           fs.writeFileSync(pluginPath, `${JSON.stringify(plugin, null, 2)}\n`);
           fs.writeFileSync(marketplacePath, `${JSON.stringify(marketplace, null, 2)}\n`);
+          fs.writeFileSync(openaiPath, `${JSON.stringify(openai, null, 2)}\n`);
           process.stdout.write(nextVersion);
           NODE
           )"
@@ -156,7 +174,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           if [[ "${NEEDS_COMMIT}" == "true" ]]; then
-            git add .claude-plugin/plugin.json .claude-plugin/marketplace.json
+            git add .claude-plugin/plugin.json .claude-plugin/marketplace.json .codex-plugin/plugin.json
             git commit -m "Release ${PLUGIN_NAME} ${PLUGIN_VERSION}"
           fi
 

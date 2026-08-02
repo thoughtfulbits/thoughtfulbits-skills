@@ -1,6 +1,6 @@
-# ThoughtfulBits Skills — a Claude Desktop plugin
+# ThoughtfulBits Skills — review skills for ChatGPT, Codex, and Claude
 
-Four review skills for B2B SaaS product and board leaders, installable in Claude Desktop with one click:
+Four review skills for B2B SaaS product and board leaders, packaged as a native OpenAI plugin and a Claude Desktop plugin:
 
 | Skill | Use it when you want… |
 | --- | --- |
@@ -9,7 +9,29 @@ Four review skills for B2B SaaS product and board leaders, installable in Claude
 | **product-plan-feedback** | A product plan, roadmap, launch plan, or GTM plan graded against a key-milestone rubric |
 | **product-feature-feedback** | A single feature or product scored with the [SPARK method](https://www.thoughtfulbits.me/p/boring-apps-add-some-spark): Simple, Purposeful, Attractive, Reliable, Known |
 
-Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, or pasted text, and ask in plain language — the right skill triggers from what you ask for.
+Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, or pasted text, and ask in plain language — the right skill triggers from what you ask for. PowerPoint speaker notes are included when the host exposes them to the skill.
+
+## Install in ChatGPT Work or Codex
+
+**Directory publication is pending OpenAI review.** When the listing is live, open **Plugins** in a supported surface, search for **ThoughtfulBits Skills**, select the plus button, and start a new chat. Type `@` to choose the plugin or a specific skill explicitly, or ask for the outcome directly and let ChatGPT select the matching skill.
+
+OpenAI plugins currently work in:
+
+- **ChatGPT Work** on the web
+- **ChatGPT Work** or **Codex** in the ChatGPT desktop app
+- **Codex CLI**, through `/plugins`
+
+They are not currently available in ordinary ChatGPT Chat, the IDE extension, or mobile. See OpenAI's [plugin availability guide](https://learn.chatgpt.com/docs/plugins) for the current surfaces.
+
+### Test the OpenAI package locally
+
+The native package manifest is `.codex-plugin/plugin.json`. Build the exact skills-only submission ZIP with:
+
+```bash
+./scripts/build-openai-plugin.sh
+```
+
+The command validates the Claude and OpenAI manifests, all four skills, their ChatGPT metadata, the listing URLs, and the branding assets before writing the ZIP to `dist/`. The checked-in [submission packet](docs/openai-submission.md) contains the directory copy, five positive tests, three negative tests, and release notes.
 
 ## Install in Claude Desktop
 
@@ -85,19 +107,23 @@ This plugin was previously published as **Board deck review** (`board-deck-revie
 
 ```
 skills/<skill-name>/SKILL.md   # the four skills
+skills/<skill-name>/agents/    # ChatGPT and Codex display/invocation metadata
+.codex-plugin/                 # native OpenAI plugin manifest
 .claude-plugin/                # Claude Desktop plugin marketplace manifests
+assets/                        # OpenAI directory branding
 evals/<skill-name>/            # per-skill eval suites and fixtures
 docs/images/                   # install walkthrough screenshots
+scripts/                       # OpenAI package validation and ZIP builder
 ```
 
 ## Releasing
 
-The `Release Claude plugin` GitHub Actions workflow runs on every push to `main`. It validates that `.claude-plugin/plugin.json` and the plugin entry in `.claude-plugin/marketplace.json` declare the same name and semantic version, then creates and pushes the annotated tag Claude Desktop expects:
+The `Release plugin` GitHub Actions workflow runs on every push to `main`. It validates that `.codex-plugin/plugin.json`, `.claude-plugin/plugin.json`, and the plugin entry in `.claude-plugin/marketplace.json` declare the same name and semantic version, then creates and pushes the annotated release tag:
 
 ```text
 thoughtfulbits-skills--v<version>
 ```
 
-If the version in the manifests has not been released yet, the workflow tags it as-is. Otherwise it increments the patch component in both manifests, commits the version bump to `main`, and tags that commit. A rerun against an already-tagged release is a successful no-op.
+If the version in the manifests has not been released yet, the workflow tags it as-is. Otherwise it increments the patch component in all three manifests, commits the version bump to `main`, and tags that commit. A rerun against an already-tagged release is a successful no-op.
 
-To choose a new minor or major version, update the version in both manifests before pushing. Because automatic patch releases add a version-bump commit to `main`, pull or rebase before your next push.
+To choose a new minor or major version, update the version in all three manifests before pushing. Because automatic patch releases add a version-bump commit to `main`, pull or rebase before your next push.
