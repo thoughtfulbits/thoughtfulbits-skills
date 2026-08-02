@@ -17,11 +17,11 @@ No terminal is required. Add the public GitHub repository to Claude Desktop as a
 
 1. Open Claude Desktop. In the left sidebar, choose **Customize**, then **Plugins**.
 
-   ![Claude Desktop Plugins settings with Customize and Plugins highlighted](docs/images/claude-desktop-1-open-plugins.png)
+   ![Claude Desktop Plugins settings with Customize and Plugins highlighted](docs/images/claude-desktop-1-open-plugins-20260801.png)
 
 2. Click **Add**, then choose **Add marketplace**.
 
-   ![The Add menu in Claude Desktop with Add marketplace highlighted](docs/images/claude-desktop-2-add-marketplace.png)
+   ![The Add menu in Claude Desktop with Add marketplace highlighted](docs/images/claude-desktop-2-add-marketplace-20260801.png)
 
 3. Choose **Add from a repository**.
 
@@ -33,13 +33,11 @@ No terminal is required. Add the public GitHub repository to Claude Desktop as a
    https://github.com/thoughtfulbits/thoughtfulbits-skills
    ```
 
-   ![The GitHub repository URL entered in Claude Desktop with Sync highlighted](docs/images/claude-desktop-4-sync-github.png)
+   ![The GitHub repository URL entered in Claude Desktop with Sync highlighted](docs/images/claude-desktop-4-sync-github-20260801.png)
 
 5. Claude adds and enables **ThoughtfulBits Skills**. Confirm that its toggle is on.
 
-   ![The plugin installed and enabled in Claude Desktop](docs/images/claude-desktop-5-plugin-enabled.png)
-
-   *The screenshots in steps 4–5 show this plugin's previous name, Board deck review; you will see ThoughtfulBits Skills.*
+   ![The plugin installed and enabled in Claude Desktop](docs/images/claude-desktop-5-plugin-enabled-20260801.png)
 
 That is the entire installation. Start a new Claude Desktop chat, attach your material, and ask.
 
