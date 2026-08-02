@@ -81,13 +81,14 @@ Use this packet to submit the skills-only ZIP produced by:
 
 ## Release notes
 
-Version 1.1.1 adds native installation in ChatGPT Work and Codex through OpenAI's universal plugin directory while preserving the existing Claude Desktop package. It includes four instruction-only review skills, OpenAI-specific skill metadata, and no MCP server, custom UI, external service, or independent data collection.
+Version 1.1.3 introduces the new ThoughtfulBits identity across the OpenAI directory and composer while preserving the existing four instruction-only review skills, Claude Desktop package, policy URLs, and invocation behavior. There is still no MCP server, custom UI, external service, or independent data collection.
 
 ## Publication checklist
 
 - Verify the publisher identity as **ThoughtfulBits Consulting**.
 - Upload the ZIP using the portal's **Skills only** option.
-- Upload `assets/logo.png` as the listing logo if the portal requests it separately.
+- Upload `assets/openai/directory-icon-light.png` and `assets/openai/directory-icon-dark.png` as the directory icons.
+- Upload `assets/openai/composer-icon-light.png` and `assets/openai/composer-icon-dark.png` as the composer icons.
 - Confirm all supported markets and English as the listing language.
 - Run the five positive and three negative tests above.
 - Published in the [OpenAI Plugins Directory](https://chatgpt.com/plugins/plugins_6a6f44be6a5881919d952d77e2da8080); the final directory URL is linked from the README and website.

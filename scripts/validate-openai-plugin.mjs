@@ -80,6 +80,9 @@ for (const prompt of ui.defaultPrompt) {
 if (!/^#[0-9A-F]{6}$/i.test(ui.brandColor)) {
   fail("interface.brandColor must be a six-digit hex color");
 }
+if (ui.brandColor.toUpperCase() !== "#2864FF") {
+  fail("interface.brandColor must use the ThoughtfulBits cobalt #2864FF");
+}
 
 for (const field of [
   "websiteURL",
@@ -107,6 +110,23 @@ const width = png.readUInt32BE(16);
 const height = png.readUInt32BE(20);
 if (width !== height || width < 48 || width > 4096) {
   fail(`interface.logo must be square and 48-4096px; received ${width}x${height}`);
+}
+
+for (const [assetPath, minimum] of [
+  ["assets/openai/directory-icon-light.png", 256],
+  ["assets/openai/directory-icon-dark.png", 256],
+  ["assets/openai/composer-icon-light.png", 48],
+  ["assets/openai/composer-icon-dark.png", 48],
+]) {
+  const asset = readFileSync(join(repoRoot, assetPath));
+  if (!asset.subarray(0, 8).equals(Buffer.from("89504e470d0a1a0a", "hex"))) {
+    fail(`${assetPath} must be a valid PNG`);
+  }
+  const assetWidth = asset.readUInt32BE(16);
+  const assetHeight = asset.readUInt32BE(20);
+  if (assetWidth !== assetHeight || assetWidth < minimum || assetWidth > 4096) {
+    fail(`${assetPath} must be square and ${minimum}-4096px; received ${assetWidth}x${assetHeight}`);
+  }
 }
 
 const skillRoot = join(repoRoot, "skills");

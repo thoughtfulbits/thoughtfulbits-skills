@@ -1,3 +1,5 @@
+![ThoughtfulBits — Ideas that Matter](assets/wordmark.png)
+
 # ThoughtfulBits Skills — review skills for ChatGPT, Codex, and Claude
 
 Four review skills for B2B SaaS product and board leaders, packaged as a native OpenAI plugin and a Claude Desktop plugin:
@@ -115,6 +117,10 @@ evals/<skill-name>/            # per-skill eval suites and fixtures
 docs/images/                   # install walkthrough screenshots
 scripts/                       # OpenAI package validation and ZIP builder
 ```
+
+## Brand assets
+
+The plugin uses the ThoughtfulBits cobalt, ink, platinum, and frost-white identity. OpenAI-specific light- and dark-mode directory and composer icons are stored in `assets/openai/`; `assets/logo.png` and `assets/icon.svg` remain the native manifest defaults.
 
 ## Releasing
 

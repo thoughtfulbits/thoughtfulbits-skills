@@ -1,7 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
-  <title>ThoughtfulBits Skills</title>
-  <rect width="64" height="64" rx="14" fill="#0B0D12"/>
-  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#262B36" stroke-width="2"/>
-  <text x="17" y="45" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="600" fill="#F0EEE8">t</text>
-  <circle cx="42" cy="41.5" r="5" fill="#E0A458"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>ThoughtfulBits</title>
+  <rect width="256" height="256" rx="40" fill="#F7FAFC"/>
+  <g>
+    <rect x="46" y="28" width="42" height="42" rx="7" fill="#DCE5F2"/>
+    <rect x="98" y="28" width="42" height="42" rx="7" fill="#2864FF"/>
+    <rect x="46" y="80" width="42" height="42" rx="7" fill="#070B14"/>
+    <rect x="98" y="80" width="42" height="42" rx="7" fill="#070B14"/>
+    <rect x="150" y="80" width="42" height="42" rx="7" fill="#070B14"/>
+    <rect x="46" y="132" width="42" height="42" rx="7" fill="#DCE5F2"/>
+    <rect x="98" y="132" width="42" height="42" rx="7" fill="#070B14"/>
+    <rect x="150" y="132" width="42" height="42" rx="7" fill="#DCE5F2"/>
+    <rect x="46" y="184" width="42" height="42" rx="7" fill="#DCE5F2"/>
+    <rect x="98" y="184" width="42" height="42" rx="7" fill="#070B14"/>
+    <rect x="150" y="184" width="42" height="42" rx="7" fill="#DCE5F2"/>
+  </g>
 </svg>
