@@ -144,10 +144,15 @@ for (const skillName of skillDirs) {
   ]) {
     if (!required.test(agent)) fail(`${skillName}/agents/openai.yaml is incomplete`);
   }
-  for (const product of ["CHATGPT", "CODEX"]) {
-    if (!new RegExp(`^\\s+- ${product}$`, "m").test(agent)) {
-      fail(`${skillName}/agents/openai.yaml is missing ${product}`);
-    }
+  const policy = agent.match(/^policy:\n((?:[ \t]+.*(?:\n|$))*)/m)?.[1] ?? "";
+  const policyKeys = [...policy.matchAll(/^\s+([a-z_]+):/gm)].map((match) => match[1]);
+  if (
+    policyKeys.length !== 1 ||
+    policyKeys[0] !== "allow_implicit_invocation"
+  ) {
+    fail(
+      `${skillName}/agents/openai.yaml policy may contain only allow_implicit_invocation`,
+    );
   }
 }
 

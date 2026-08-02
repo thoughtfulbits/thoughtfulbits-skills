@@ -81,7 +81,7 @@ Use this packet to submit the skills-only ZIP produced by:
 
 ## Release notes
 
-Version 1.1.0 adds native installation in ChatGPT Work and Codex through OpenAI's universal plugin directory while preserving the existing Claude Desktop package. It includes four instruction-only review skills, OpenAI-specific skill metadata, and no MCP server, custom UI, external service, or independent data collection.
+Version 1.1.1 adds native installation in ChatGPT Work and Codex through OpenAI's universal plugin directory while preserving the existing Claude Desktop package. It includes four instruction-only review skills, OpenAI-specific skill metadata, and no MCP server, custom UI, external service, or independent data collection.
 
 ## Publication checklist
 

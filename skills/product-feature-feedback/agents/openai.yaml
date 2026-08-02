@@ -4,7 +4,4 @@ interface:
   default_prompt: "SPARK-score the attached product or feature specification."
 
 policy:
-  products:
-    - CHATGPT
-    - CODEX
   allow_implicit_invocation: true

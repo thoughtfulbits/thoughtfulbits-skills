@@ -4,7 +4,4 @@ interface:
   default_prompt: "Give me the concise board-member reaction to the attached deck."
 
 policy:
-  products:
-    - CHATGPT
-    - CODEX
   allow_implicit_invocation: true

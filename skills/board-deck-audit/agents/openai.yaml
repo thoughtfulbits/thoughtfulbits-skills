@@ -4,7 +4,4 @@ interface:
   default_prompt: "Audit the attached board deck before I send it."
 
 policy:
-  products:
-    - CHATGPT
-    - CODEX
   allow_implicit_invocation: true

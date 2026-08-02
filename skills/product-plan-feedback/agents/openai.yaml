@@ -4,7 +4,4 @@ interface:
   default_prompt: "Review the attached product plan against the ThoughtfulBits rubric."
 
 policy:
-  products:
-    - CHATGPT
-    - CODEX
   allow_implicit_invocation: true
