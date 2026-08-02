@@ -13,7 +13,7 @@ Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, or pasted text, and ask
 
 ## Install in ChatGPT Work or Codex
 
-**Directory publication is pending OpenAI review.** When the listing is live, open **Plugins** in a supported surface, search for **ThoughtfulBits Skills**, select the plus button, and start a new chat. Type `@` to choose the plugin or a specific skill explicitly, or ask for the outcome directly and let ChatGPT select the matching skill.
+Open [ThoughtfulBits Skills in the OpenAI Plugins Directory](https://chatgpt.com/plugins/plugins_6a6f44be6a5881919d952d77e2da8080), select the plus button to install it, and start a new chat. Type `@` to choose the plugin or a specific skill explicitly, or ask for the outcome directly and let ChatGPT select the matching skill.
 
 OpenAI plugins currently work in:
 

@@ -90,4 +90,4 @@ Version 1.1.1 adds native installation in ChatGPT Work and Codex through OpenAI'
 - Upload `assets/logo.png` as the listing logo if the portal requests it separately.
 - Confirm all supported markets and English as the listing language.
 - Run the five positive and three negative tests above.
-- Publish only after OpenAI approval, then add the final directory URL to the README and website.
+- Published in the [OpenAI Plugins Directory](https://chatgpt.com/plugins/plugins_6a6f44be6a5881919d952d77e2da8080); the final directory URL is linked from the README and website.
