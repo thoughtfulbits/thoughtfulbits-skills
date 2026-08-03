@@ -120,7 +120,7 @@ scripts/                       # OpenAI package validation and ZIP builder
 
 ## Brand assets
 
-The plugin uses the ThoughtfulBits cobalt, ink, platinum, and frost-white identity. OpenAI-specific light- and dark-mode directory and composer icons are stored in `assets/openai/`; `assets/logo.png` and `assets/icon.svg` remain the native manifest defaults.
+The plugin uses the ThoughtfulBits cobalt, ink, platinum, and frost-white identity. Its speech-bubble symbol holds three distinct “bits,” with a two-bit thought tail. OpenAI-specific light- and dark-mode directory and composer icons are stored in `assets/openai/`; `assets/logo.png` and `assets/icon.svg` remain the native manifest defaults.
 
 ## Releasing
 

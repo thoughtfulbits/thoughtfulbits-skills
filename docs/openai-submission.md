@@ -81,7 +81,7 @@ Use this packet to submit the skills-only ZIP produced by:
 
 ## Release notes
 
-Version 1.1.3 introduces the new ThoughtfulBits identity across the OpenAI directory and composer while preserving the existing four instruction-only review skills, Claude Desktop package, policy URLs, and invocation behavior. There is still no MCP server, custom UI, external service, or independent data collection.
+Version 1.1.4 refreshes the ThoughtfulBits symbol across the OpenAI directory and composer. The new speech-bubble mark contains three distinct “bits” and a two-bit thought tail. The existing four instruction-only review skills, Claude Desktop package, policy URLs, and invocation behavior are unchanged. There is still no MCP server, custom UI, external service, or independent data collection.
 
 ## Publication checklist
 
