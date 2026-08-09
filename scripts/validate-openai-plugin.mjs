@@ -135,7 +135,7 @@ const skillDirs = readdirSync(skillRoot, { withFileTypes: true })
   .map((entry) => entry.name)
   .sort();
 
-if (skillDirs.length !== 4) fail(`Expected four skills; found ${skillDirs.length}`);
+if (skillDirs.length !== 5) fail(`Expected five skills; found ${skillDirs.length}`);
 
 for (const skillName of skillDirs) {
   const skillPath = join(skillRoot, skillName, "SKILL.md");

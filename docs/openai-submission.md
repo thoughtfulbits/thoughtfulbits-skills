@@ -10,20 +10,20 @@ Use this packet to submit the skills-only ZIP produced by:
 
 - **Name:** ThoughtfulBits Skills
 - **Publisher:** ThoughtfulBits Consulting
-- **Subtitle:** Review decks and product plans
+- **Subtitle:** Review decks, plans, and UX
 - **Category:** Business & Operations
 - **Availability:** All supported markets
 - **Website:** https://thoughtfulbits.ai/board-deck-review
 - **Privacy:** https://thoughtfulbits.ai/privacy
 - **Terms:** https://thoughtfulbits.ai/terms
 - **Support:** https://thoughtfulbits.ai/support
-- **Description:** Four rigorous review workflows for B2B SaaS leaders: deep board-deck audits, concise board feedback, product-plan reviews, and SPARK feature reviews.
+- **Description:** Five rigorous review workflows for B2B SaaS leaders: deep board-deck audits, concise board feedback, product-plan reviews, SPARK feature reviews, and multi-agent UI/UX testing with a loop-ready 1-10 score.
 
 ## Starter prompts
 
 1. Audit the attached board deck before I send it. Identify the few fixes that matter most.
 2. Read the attached board deck like a director and give me the concise meeting-room reaction.
-3. Review the attached product plan or feature spec and tell me where it falls short.
+3. Review the attached product plan, feature, or UI and tell me where it falls short.
 
 ## Positive tests
 
@@ -62,6 +62,13 @@ Use this packet to submit the skills-only ZIP produced by:
 - **Expected skill:** `product-feature-feedback`
 - **Expected result:** A cited 1-5 score for each SPARK dimension, the correct total and verdict band, a cut list, one delight moment, and three focused improvements.
 
+### 6. Multi-agent UI/UX test
+
+- **Prompt:** Test the account-creation flow in this spec with five independent UI/UX methods. Return the numeric average, critical gate, and loop-ready JSON.
+- **Attachment:** https://raw.githubusercontent.com/thoughtfulbits/thoughtfulbits-skills/main/evals/test-ui-ux/files/harbor_account_creation_spec.md
+- **Expected skill:** `test-ui-ux`
+- **Expected result:** Exactly five isolated method results — SPARK, Nielsen, cognitive walkthrough, PURE, and WCAG 2.2 AA — mechanically averaged to one decimal, with a provisional verdict because a specification is not a live exercised UI.
+
 ## Negative tests
 
 ### 1. Visual redesign request
@@ -81,7 +88,7 @@ Use this packet to submit the skills-only ZIP produced by:
 
 ## Release notes
 
-Version 1.1.4 refreshes the ThoughtfulBits symbol across the OpenAI directory and composer. The new speech-bubble mark contains three distinct “bits” and a two-bit thought tail. The existing four instruction-only review skills, Claude Desktop package, policy URLs, and invocation behavior are unchanged. There is still no MCP server, custom UI, external service, or independent data collection.
+Version 1.2.0 adds `test-ui-ux`, a rigorous loop-oriented UI/UX evaluation skill. It dispatches five isolated subagents across SPARK, Nielsen heuristics, cognitive walkthrough, PURE, and WCAG 2.2 AA, then validates and averages their 1-10 scores with a separate critical-failure gate. It accepts live URLs, screenshots, and specifications while marking non-interactive evidence provisional. There is still no MCP server, custom UI, external service, or independent data collection.
 
 ## Publication checklist
 
@@ -90,5 +97,5 @@ Version 1.1.4 refreshes the ThoughtfulBits symbol across the OpenAI directory an
 - Upload `assets/openai/directory-icon-light.png` and `assets/openai/directory-icon-dark.png` as the directory icons.
 - Upload `assets/openai/composer-icon-light.png` and `assets/openai/composer-icon-dark.png` as the composer icons.
 - Confirm all supported markets and English as the listing language.
-- Run the five positive and three negative tests above.
+- Run the six positive and three negative tests above.
 - Published in the [OpenAI Plugins Directory](https://chatgpt.com/plugins/plugins_6a6f44be6a5881919d952d77e2da8080); the final directory URL is linked from the README and website.

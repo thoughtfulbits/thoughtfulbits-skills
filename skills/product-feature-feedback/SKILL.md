@@ -1,6 +1,6 @@
 ---
 name: product-feature-feedback
-description: "Evaluate a single B2B SaaS product or feature with the SPARK method — Simple, Purposeful & Prioritized, Attractive & Attentive, Reliable, Known. Scores each dimension 1-5 with cited evidence (25 is optimal, 18-24 calls for focused iteration, below 18 means halt new features and rebuild foundations), walks the primary user flow, flags what to cut because it advances neither purpose nor a known problem, designs one delight moment, and commits to the three simplest improvements. Use for feature specs, PRDs, feature ideas, UX or app critiques, and requests like 'review this feature', 'SPARK review', 'is this feature worth building', or 'why does our app feel boring' — supplied as .pptx, .pdf, .docx, .md, pasted text, or a described live product. Do not use for full product plans, roadmaps, launch plans, or GTM plans (product-plan-feedback), or for board materials (board-deck-audit or board-feedback)."
+description: "Evaluate a single B2B SaaS product or feature with SPARK — Simple, Purposeful & Prioritized, Attractive & Attentive, Reliable, Known. Scores each dimension 1-5 with cited evidence, walks the primary flow, identifies cuts, designs one delight moment, and gives the three simplest improvements. Use for feature specs, PRDs, feature ideas, strategic app critiques, and requests like 'review this feature', 'SPARK review', 'is this worth building', or 'why does our app feel boring' — supplied as .pptx, .pdf, .docx, .md, pasted text, or a described live product. For rigorous UI/UX testing with five independent subagents, a loop-ready 1-10 average, or a release gate, use test-ui-ux. Do not use for full product plans, roadmaps, launch or GTM plans (product-plan-feedback), or board materials (board-deck-audit or board-feedback)."
 ---
 
 # SPARK Feature Review
@@ -129,7 +129,7 @@ Use this structure, omitting only sections that genuinely do not apply:
 3. [Next.]
 ```
 
-If the supplied document is actually a full product plan or roadmap rather than a single feature or product experience, say so and point the user to product-plan-feedback instead of force-fitting SPARK onto it.
+If the supplied document is actually a full product plan or roadmap rather than a single feature or product experience, say so and point the user to product-plan-feedback instead of force-fitting SPARK onto it. If the user wants a rigorous multi-agent UI/UX test, numeric loop score, or release gate rather than a single SPARK review, point them to test-ui-ux.
 
 Deliver the review in the response. Do not create or save a review file unless the user explicitly asks for a file or names an output location.
 

@@ -25,6 +25,10 @@ cp -R "${repo_root}/skills" "${package_root}/skills"
 cp -R "${repo_root}/assets" "${package_root}/assets"
 cp "${repo_root}/LICENSE" "${package_root}/LICENSE"
 
+# Keep local interpreter and operating-system artifacts out of the submitted ZIP.
+find "${package_root}" -type d -name '__pycache__' -prune -exec rm -rf {} +
+find "${package_root}" -type f \( -name '*.pyc' -o -name '.DS_Store' \) -delete
+
 rm -f "${output_path}"
 (
   cd "${package_root}"

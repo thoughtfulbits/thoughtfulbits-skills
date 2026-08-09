@@ -2,7 +2,7 @@
 
 # ThoughtfulBits Skills — review skills for ChatGPT, Codex, and Claude
 
-Four review skills for B2B SaaS product and board leaders, packaged as a native OpenAI plugin and a Claude Desktop plugin:
+Five review skills for B2B SaaS product and board leaders, packaged as a native OpenAI plugin and a Claude Desktop plugin:
 
 | Skill | Use it when you want… |
 | --- | --- |
@@ -10,8 +10,9 @@ Four review skills for B2B SaaS product and board leaders, packaged as a native 
 | **board-feedback** | The concise reaction a sharp director would give: does this deck make sense? One screen, no tables |
 | **product-plan-feedback** | A product plan, roadmap, launch plan, or GTM plan graded against a key-milestone rubric |
 | **product-feature-feedback** | A single feature or product scored with the [SPARK method](https://www.thoughtfulbits.me/p/boring-apps-add-some-spark): Simple, Purposeful, Attractive, Reliable, Known |
+| **test-ui-ux** | A specified UI or flow tested by five independent subagents, with an evidence-linked 1–10 average and a loop-ready pass/fail result |
 
-Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, or pasted text, and ask in plain language — the right skill triggers from what you ask for. PowerPoint speaker notes are included when the host exposes them to the skill.
+Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, a screenshot, a spec, or pasted text — or provide a product URL — and ask in plain language. The right skill triggers from what you ask for. PowerPoint speaker notes are included when the host exposes them to the skill.
 
 ## Install in ChatGPT Work or Codex
 
@@ -33,7 +34,7 @@ The native package manifest is `.codex-plugin/plugin.json`. Build the exact skil
 ./scripts/build-openai-plugin.sh
 ```
 
-The command validates the Claude and OpenAI manifests, all four skills, their ChatGPT metadata, the listing URLs, and the branding assets before writing the ZIP to `dist/`. The checked-in [submission packet](docs/openai-submission.md) contains the directory copy, five positive tests, three negative tests, and release notes.
+The command validates the Claude and OpenAI manifests, all five skills, their ChatGPT metadata, the listing URLs, and the branding assets before writing the ZIP to `dist/`. The checked-in [submission packet](docs/openai-submission.md) contains the directory copy, six positive tests, three negative tests, and release notes.
 
 ## Install in Claude Desktop
 
@@ -65,7 +66,7 @@ No terminal is required. Add the public GitHub repository to Claude Desktop as a
 
 That is the entire installation. Start a new Claude Desktop chat, attach your material, and ask.
 
-## The four skills
+## The five skills
 
 ### board-deck-audit
 
@@ -101,6 +102,14 @@ Scores a single feature or product 1–5 on each SPARK dimension — **S**imple,
 
 > "Why does our app feel boring? Run your SPARK review on it."
 
+### test-ui-ux
+
+Tests a specified UI, workflow, screenshot, or product spec with five isolated evaluators: SPARK, Nielsen's usability heuristics, a cognitive walkthrough, PURE task-friction scoring, and WCAG 2.2 AA. Their equally weighted scores produce a deterministic 1–10 average. A live flow passes only at 8.0 or higher with no confirmed critical failure; static artifacts remain explicitly provisional.
+
+> "Test our onboarding flow at this URL and give me the five-agent UI/UX score."
+
+> "Use this checkout screenshot and spec to establish a provisional UX baseline for our design loop."
+
 ## Upgrading from board-deck-review
 
 This plugin was previously published as **Board deck review** (`board-deck-review`). The old GitHub URL redirects here, so an already-added marketplace keeps syncing; after the next sync, enable **ThoughtfulBits Skills** and remove the defunct **Board deck review** entry. If the sync doesn't pick up the rename, remove the marketplace and re-add it at the URL above.
@@ -108,7 +117,7 @@ This plugin was previously published as **Board deck review** (`board-deck-revie
 ## Repo layout
 
 ```
-skills/<skill-name>/SKILL.md   # the four skills
+skills/<skill-name>/SKILL.md   # the five skills
 skills/<skill-name>/agents/    # ChatGPT and Codex display/invocation metadata
 .codex-plugin/                 # native OpenAI plugin manifest
 .claude-plugin/                # Claude Desktop plugin marketplace manifests

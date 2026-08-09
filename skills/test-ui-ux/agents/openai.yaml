@@ -1,0 +1,7 @@
+interface:
+  display_name: "Test UI/UX"
+  short_description: "Rigorous multi-agent UI/UX loop testing"
+  default_prompt: "Use $test-ui-ux to evaluate this product experience and return a loop-ready score."
+
+policy:
+  allow_implicit_invocation: true

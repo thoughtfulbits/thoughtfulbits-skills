@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create a Harbor project</title>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, sans-serif; }
+      body { margin: 0; background: #f7f9fc; color: #172033; }
+      main { max-width: 36rem; margin: 8vh auto; padding: 2rem; background: white; border: 1px solid #ccd5e3; border-radius: 1rem; }
+      label { display: block; margin-top: 1rem; font-weight: 650; }
+      input, textarea, button { box-sizing: border-box; width: 100%; min-height: 44px; margin-top: .4rem; padding: .75rem; font: inherit; }
+      input, textarea { border: 1px solid #6b7484; border-radius: .5rem; }
+      button { border: 0; border-radius: .5rem; background: #1f57d6; color: white; font-weight: 700; cursor: pointer; }
+      button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #f2a900; outline-offset: 3px; }
+      #success { margin-top: 1rem; padding: 1rem; border-radius: .5rem; background: #e8f7ed; color: #155b2a; }
+      .hint { color: #4d5868; }
+      [hidden] { display: none; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Create your first project</h1>
+      <p class="hint">Give the project a clear name and outcome. You can change both later.</p>
+      <form id="project-form">
+        <label for="name">Project name</label>
+        <input id="name" name="name" required autocomplete="off">
+        <label for="outcome">Desired outcome</label>
+        <textarea id="outcome" name="outcome" required></textarea>
+        <button type="submit">Create project</button>
+      </form>
+      <section id="success" role="status" tabindex="-1" hidden>
+        <strong>Project created.</strong> Your empty project is ready for its first task.
+      </section>
+    </main>
+    <script>
+      const form = document.querySelector('#project-form');
+      const success = document.querySelector('#success');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        form.hidden = true;
+        success.hidden = false;
+        success.focus();
+      });
+    </script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 {
   "name": "thoughtfulbits-skills",
-  "version": "1.1.4",
-  "description": "ThoughtfulBits review skills for B2B SaaS product and board leaders: board deck audits, board feedback, product plan feedback, and product feature feedback.",
+  "version": "1.2.0",
+  "description": "ThoughtfulBits review skills for B2B SaaS product and board leaders: board deck audits, board feedback, product plan and feature feedback, and rigorous multi-agent UI/UX testing.",
   "author": {
     "name": "ThoughtfulBits Consulting",
     "email": "alex@thoughtfulbits.me",
@@ -14,20 +14,21 @@
     "board decks",
     "product plans",
     "product feedback",
+    "UI/UX testing",
     "B2B SaaS"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "ThoughtfulBits Skills",
-    "shortDescription": "Review decks and product plans",
-    "longDescription": "Four rigorous review workflows for B2B SaaS leaders: deep board-deck audits, concise board feedback, product-plan reviews, and SPARK feature reviews.",
+    "shortDescription": "Review decks, plans, and UX",
+    "longDescription": "Five rigorous review workflows for B2B SaaS leaders: deep board-deck audits, concise board feedback, product-plan reviews, SPARK feature reviews, and multi-agent UI/UX testing with a loop-ready 1-10 score.",
     "developerName": "ThoughtfulBits Consulting",
     "category": "Business & Operations",
     "capabilities": [
       "Audit board decks",
       "Give concise board feedback",
-      "Review product plans",
-      "Score product features with SPARK"
+      "Review product plans and features",
+      "Test UI/UX with five independent methods"
     ],
     "websiteURL": "https://thoughtfulbits.ai/board-deck-review",
     "privacyPolicyURL": "https://thoughtfulbits.ai/privacy",
@@ -36,7 +37,7 @@
     "defaultPrompt": [
       "Audit the attached board deck before I send it. Identify the few fixes that matter most.",
       "Read the attached board deck like a director and give me the concise meeting-room reaction.",
-      "Review the attached product plan or feature spec and tell me where it falls short."
+      "Review the attached product plan, feature, or UI and tell me where it falls short."
     ],
     "brandColor": "#2864FF",
     "composerIcon": "./assets/icon.svg",
