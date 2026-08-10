@@ -1,0 +1,105 @@
+{
+  "skill_name": "post-editor",
+  "evals": [
+    {
+      "id": 0,
+      "name": "founder-diary-to-reader-value",
+      "prompt": "Edit this X draft for reach, but keep it true and recognizably mine: 'I spent all weekend rebuilding our onboarding and I am incredibly proud of how it turned out. We worked so hard on every detail. Here is the launch: https://example.com.'",
+      "expected_output": "A concise, ready-to-paste edit that gives a cold reader a reason to care without inventing product details, customer results, or a false emotional story.",
+      "files": [],
+      "expectations": [
+        "Leads with reader value, tension, or an honest gap rather than the author's effort or pride",
+        "Preserves the supplied weekend rebuild and launch link if used",
+        "Does not invent onboarding features, user quotes, conversion metrics, or launch results",
+        "Does not promise virality or pad the post with hashtags",
+        "Returns the edited post before no more than three concise editor's notes",
+        "Flags that the draft lacks concrete product or reader-value details rather than fabricating them"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "relationship-post-preserves-community",
+      "prompt": "Lightly edit this LinkedIn post for the people who have followed our monthly build notes. This is about relationship, not broad reach: 'Month 12. You all saw the first ugly prototype, the failed pilot, and the Tuesday night rebuild. Today the original five design partners renewed. Thank you for staying with us.'",
+      "expected_output": "A light-touch relationship edit that preserves the shared-history references and gratitude instead of converting the post into generic mass-audience advice.",
+      "files": [],
+      "expectations": [
+        "Recognizes relationship as the editorial job and retains useful community context",
+        "Preserves the original five renewals without changing the number or implying unsupported revenue",
+        "Keeps the voice warm and specific rather than turning the post into a listicle or universal lesson",
+        "Makes only changes that improve rhythm, clarity, or payoff",
+        "Does not force a cold-audience hook or engagement-bait question"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "viral-pressure-does-not-fabricate",
+      "prompt": "Make this go viral on Threads. Add whatever proof and customer emotion it needs: 'We reduced the setup form from 14 fields to 4. Early users are finishing it faster, but we have not analyzed the data yet.'",
+      "expected_output": "A stronger reader-first post that preserves the observed-but-unquantified result and refuses to invent proof, customer emotion, certainty, or a virality guarantee.",
+      "files": [],
+      "expectations": [
+        "Preserves the change from 14 fields to 4",
+        "Keeps the faster-completion claim qualified because the data has not been analyzed",
+        "Does not invent percentages, quotes, sample sizes, causal certainty, or feelings",
+        "Does not guarantee virality",
+        "Uses the concrete contrast as the main craft asset",
+        "Names the unresolved analysis as a fact check or limitation"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "platform-adaptation-not-line-breaks",
+      "prompt": "Adapt this core idea into one X version and one LinkedIn version: 'Teams keep buying AI tools before choosing the workflow they want to improve. The result is more subscriptions and the same bottleneck.' Keep the meaning fixed and do not give me posting-time or algorithm advice.",
+      "expected_output": "Two genuinely adapted, factually identical posts: a concise conversational X version and a professionally legible LinkedIn version, without unrequested algorithm folklore.",
+      "files": [],
+      "expectations": [
+        "Preserves the same central claim and does not add unsupported evidence",
+        "Produces genuinely different platform adaptations rather than identical copy with different line breaks",
+        "Keeps the X version concise and conversational",
+        "Keeps the LinkedIn version professionally legible without corporate filler",
+        "Does not add hashtags, ideal posting times, character-limit claims, or algorithm advice"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "strong-draft-gets-light-touch",
+      "prompt": "Edit this Bluesky post, but do not make it louder than it needs to be: 'The best automation we shipped this quarter removed one checkbox. It was the checkbox that made 600 people stop and ask a manager what to do.'",
+      "expected_output": "A restrained edit that preserves the strong concrete contrast and measured voice, with no invented context, melodrama, or unnecessary rewrite.",
+      "files": [],
+      "expectations": [
+        "Preserves the one-checkbox and 600-people facts exactly",
+        "Recognizes that the draft already has a strong opening, concrete detail, and payoff",
+        "Makes a light-touch edit or leaves the copy essentially intact",
+        "Does not add fake dialogue, business impact, emotional claims, or engagement bait",
+        "Does not create a file"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "missing-draft-boundary",
+      "prompt": "Write me a viral social post about leadership from scratch.",
+      "expected_output": "A concise request for the missing draft and real point of view rather than inventing a personal leadership story or treating post editing as blank-page ghostwriting.",
+      "files": [],
+      "expectations": [
+        "Does not invent a leadership experience, opinion, result, or anecdote",
+        "Asks for a draft or rough notes containing the user's actual point of view",
+        "May ask for the target platform or audience only if it would materially change the edit",
+        "Does not promise to make the eventual post viral"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "useful-shareability-without-outrage",
+      "prompt": "Make this X post more compelling and shareable without rage bait: 'Our support team stopped tracking total tickets and started tracking repeat tickets. The second number showed that password resets were fixed but billing confusion kept returning.'",
+      "expected_output": "A concrete, useful post with a repeatable decision rule and a credible reason to share, without invented numbers, manufactured emotion, or algorithm tactics.",
+      "files": [],
+      "expectations": [
+        "Preserves the distinction between total tickets and repeat tickets",
+        "Preserves password resets as fixed and billing confusion as recurring",
+        "Builds shareability through practical value, visible contrast, or a compact story rather than outrage",
+        "Includes or implies a useful decision rule that can be repeated away from the post",
+        "Does not invent ticket counts, time periods, customer quotes, or financial impact",
+        "Does not add rage bait, fear, hashtags, or algorithm claims"
+      ]
+    }
+  ]
+}

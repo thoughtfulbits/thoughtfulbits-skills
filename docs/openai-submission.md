@@ -10,20 +10,20 @@ Use this packet to submit the skills-only ZIP produced by:
 
 - **Name:** ThoughtfulBits Skills
 - **Publisher:** ThoughtfulBits Consulting
-- **Subtitle:** Review decks, plans, and UX
+- **Subtitle:** Review plans, UX, and posts
 - **Category:** Business & Operations
 - **Availability:** All supported markets
 - **Website:** https://thoughtfulbits.ai/board-deck-review
 - **Privacy:** https://thoughtfulbits.ai/privacy
 - **Terms:** https://thoughtfulbits.ai/terms
 - **Support:** https://thoughtfulbits.ai/support
-- **Description:** Five rigorous review workflows for B2B SaaS leaders: deep board-deck audits, concise board feedback, product-plan reviews, SPARK feature reviews, and multi-agent UI/UX testing with a loop-ready 1-10 score.
+- **Description:** Six rigorous review and editing workflows for B2B SaaS leaders: board-deck audits, board feedback, product-plan and SPARK feature reviews, multi-agent UI/UX testing, and reader-first social post editing.
 
 ## Starter prompts
 
 1. Audit the attached board deck before I send it. Identify the few fixes that matter most.
 2. Read the attached board deck like a director and give me the concise meeting-room reaction.
-3. Review the attached product plan, feature, or UI and tell me where it falls short.
+3. Edit this social post for a cold audience without changing the facts or my voice.
 
 ## Positive tests
 
@@ -69,6 +69,12 @@ Use this packet to submit the skills-only ZIP produced by:
 - **Expected skill:** `test-ui-ux`
 - **Expected result:** Exactly five isolated method results — SPARK, Nielsen, cognitive walkthrough, PURE, and WCAG 2.2 AA — mechanically averaged to one decimal, with a provisional verdict because a specification is not a live exercised UI.
 
+### 7. Reader-first social post edit
+
+- **Prompt:** Edit this X draft for a cold audience, but keep every fact and make it sound like me: “We reduced the setup form from 14 fields to 4. Early users are finishing it faster, but we have not analyzed the data yet.”
+- **Expected skill:** `post-editor`
+- **Expected result:** A ready-to-paste post that uses the concrete 14-to-4 contrast, keeps the faster-completion observation qualified, and improves reader value and shareability without inventing data, customer emotion, or a virality promise.
+
 ## Negative tests
 
 ### 1. Visual redesign request
@@ -84,11 +90,11 @@ Use this packet to submit the skills-only ZIP produced by:
 ### 3. Unrelated writing request
 
 - **Prompt:** Draft a blog post announcing our new office and summer internship program.
-- **Expected result:** ThoughtfulBits Skills should not activate because the request is unrelated to board-deck, product-plan, or feature review.
+- **Expected result:** ThoughtfulBits Skills should not activate because this is blank-page long-form drafting, not editing an existing short-form social post or running one of the supported reviews.
 
 ## Release notes
 
-Version 1.2.0 adds `test-ui-ux`, a rigorous loop-oriented UI/UX evaluation skill. It dispatches five isolated subagents across SPARK, Nielsen heuristics, cognitive walkthrough, PURE, and WCAG 2.2 AA, then validates and averages their 1-10 scores with a separate critical-failure gate. It accepts live URLs, screenshots, and specifications while marking non-interactive evidence provisional. There is still no MCP server, custom UI, external service, or independent data collection.
+Version 1.3.0 adds `post-editor`, a reader-first workflow for existing X, LinkedIn, Threads, Bluesky, and short social-caption drafts. It strengthens cold-reader value, emotional recognition, concrete craft, and evidence-backed shareability while preserving facts, intent, voice, and cultural nuance. The framework explicitly credits Nobunaga, Jonah Berger, and Katherine Milkman. There is still no MCP server, custom UI, external service, or independent data collection.
 
 ## Publication checklist
 
@@ -97,5 +103,5 @@ Version 1.2.0 adds `test-ui-ux`, a rigorous loop-oriented UI/UX evaluation skill
 - Upload `assets/openai/directory-icon-light.png` and `assets/openai/directory-icon-dark.png` as the directory icons.
 - Upload `assets/openai/composer-icon-light.png` and `assets/openai/composer-icon-dark.png` as the composer icons.
 - Confirm all supported markets and English as the listing language.
-- Run the six positive and three negative tests above.
+- Run the seven positive and three negative tests above.
 - Published in the [OpenAI Plugins Directory](https://chatgpt.com/plugins/plugins_6a6f44be6a5881919d952d77e2da8080); the final directory URL is linked from the README and website.

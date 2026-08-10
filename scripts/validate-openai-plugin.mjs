@@ -135,7 +135,7 @@ const skillDirs = readdirSync(skillRoot, { withFileTypes: true })
   .map((entry) => entry.name)
   .sort();
 
-if (skillDirs.length !== 5) fail(`Expected five skills; found ${skillDirs.length}`);
+if (skillDirs.length !== 6) fail(`Expected six skills; found ${skillDirs.length}`);
 
 for (const skillName of skillDirs) {
   const skillPath = join(skillRoot, skillName, "SKILL.md");
@@ -151,6 +151,14 @@ for (const skillName of skillDirs) {
   }
   if (!/^description:\s*\S/m.test(frontmatter[1])) {
     fail(`${skillName}/SKILL.md is missing a description`);
+  }
+  if (
+    skillName === "post-editor" &&
+    (!skill.includes("https://x.com/japan_nobunaga/status/2086720217544339565") ||
+      !skill.includes("https://jonahberger.com/contagious-resources/") ||
+      !skill.includes("https://doi.org/10.1509/jmr.10.0353"))
+  ) {
+    fail("post-editor/SKILL.md must retain its inspiration and research credits");
   }
 
   const agent = readFileSync(agentPath, "utf8");
@@ -173,6 +181,32 @@ for (const skillName of skillDirs) {
     fail(
       `${skillName}/agents/openai.yaml policy may contain only allow_implicit_invocation`,
     );
+  }
+}
+
+const postEditorEvals = readJson("evals/post-editor/evals.json");
+if (
+  postEditorEvals.skill_name !== "post-editor" ||
+  !Array.isArray(postEditorEvals.evals) ||
+  postEditorEvals.evals.length < 7
+) {
+  fail("post-editor eval suite must contain at least seven cases");
+}
+const postEditorEvalIds = new Set();
+for (const evaluation of postEditorEvals.evals) {
+  if (!Number.isInteger(evaluation.id) || postEditorEvalIds.has(evaluation.id)) {
+    fail("post-editor eval IDs must be unique integers");
+  }
+  postEditorEvalIds.add(evaluation.id);
+  if (
+    !evaluation.name ||
+    !evaluation.prompt ||
+    !evaluation.expected_output ||
+    !Array.isArray(evaluation.files) ||
+    !Array.isArray(evaluation.expectations) ||
+    evaluation.expectations.length === 0
+  ) {
+    fail(`post-editor eval ${JSON.stringify(evaluation.name)} is incomplete`);
   }
 }
 

@@ -1,8 +1,8 @@
 ![ThoughtfulBits — Ideas that Matter](assets/wordmark.png)
 
-# ThoughtfulBits Skills — review skills for ChatGPT, Codex, and Claude
+# ThoughtfulBits Skills — review and editing skills for ChatGPT, Codex, and Claude
 
-Five review skills for B2B SaaS product and board leaders, packaged as a native OpenAI plugin and a Claude Desktop plugin:
+Six review and editing skills for B2B SaaS leaders, packaged as a native OpenAI plugin, a Claude Desktop plugin, and a universal [skills.sh](https://skills.sh/) repository:
 
 | Skill | Use it when you want… |
 | --- | --- |
@@ -11,8 +11,9 @@ Five review skills for B2B SaaS product and board leaders, packaged as a native 
 | **product-plan-feedback** | A product plan, roadmap, launch plan, or GTM plan graded against a key-milestone rubric |
 | **product-feature-feedback** | A single feature or product scored with the [SPARK method](https://www.thoughtfulbits.me/p/boring-apps-add-some-spark): Simple, Purposeful, Attractive, Reliable, Known |
 | **test-ui-ux** | A specified UI or flow tested by five independent subagents, with an evidence-linked 1–10 average and a loop-ready pass/fail result |
+| **post-editor** | A short-form social post edited for cold-reader value, emotional resonance, and shareability without inventing facts or flattening the author's voice |
 
-Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, a screenshot, a spec, or pasted text — or provide a product URL — and ask in plain language. The right skill triggers from what you ask for. PowerPoint speaker notes are included when the host exposes them to the skill.
+Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, a screenshot, a spec, or pasted text; provide a product URL; or paste a social draft. Ask in plain language and the right skill triggers from what you ask for. PowerPoint speaker notes are included when the host exposes them to the skill.
 
 ## Install in ChatGPT Work or Codex
 
@@ -34,7 +35,7 @@ The native package manifest is `.codex-plugin/plugin.json`. Build the exact skil
 ./scripts/build-openai-plugin.sh
 ```
 
-The command validates the Claude and OpenAI manifests, all five skills, their ChatGPT metadata, the listing URLs, and the branding assets before writing the ZIP to `dist/`. The checked-in [submission packet](docs/openai-submission.md) contains the directory copy, six positive tests, three negative tests, and release notes.
+The command validates the Claude and OpenAI manifests, all six skills, their ChatGPT metadata, the listing URLs, and the branding assets before writing the ZIP to `dist/`. The checked-in [submission packet](docs/openai-submission.md) contains the directory copy, seven positive tests, three negative tests, and release notes.
 
 ## Install in Claude Desktop
 
@@ -66,7 +67,19 @@ No terminal is required. Add the public GitHub repository to Claude Desktop as a
 
 That is the entire installation. Start a new Claude Desktop chat, attach your material, and ask.
 
-## The five skills
+## Install universally with skills.sh
+
+Use the open skills installer to list the package, install only `post-editor`, or install every skill globally for every compatible agent:
+
+```bash
+npx skills add thoughtfulbits/thoughtfulbits-skills --list
+npx skills add thoughtfulbits/thoughtfulbits-skills --skill post-editor --agent '*' --global --yes
+npx skills add thoughtfulbits/thoughtfulbits-skills --all --global
+```
+
+The flat `skills/<skill-name>/SKILL.md` layout is the portable source used by skills.sh. No separate ThoughtfulBits account or server is required.
+
+## The six skills
 
 ### board-deck-audit
 
@@ -110,6 +123,16 @@ Tests a specified UI, workflow, screenshot, or product spec with five isolated e
 
 > "Use this checkout screenshot and spec to establish a provisional UX baseline for our design loop."
 
+### post-editor
+
+Edits an existing X, LinkedIn, Threads, Bluesky, or short social-caption draft for readers who may not know the author. It converts personal importance into reader value, strengthens the cold open, concrete proof, emotional recognition, practical usefulness, and story, then checks factual fidelity and voice. It does not promise virality, invent evidence, manufacture outrage, or substitute algorithm folklore for good writing.
+
+The reader-first framework credits [NOBUNAGA](https://x.com/japan_nobunaga/status/2086720217544339565); the shareability pass credits [Jonah Berger's *Contagious* resources](https://jonahberger.com/contagious-resources/) and [Berger and Katherine Milkman's published research](https://doi.org/10.1509/jmr.10.0353).
+
+> "Edit this X draft for a cold audience, but keep every fact and make it sound like me."
+
+> "Adapt this post for LinkedIn and Threads. Keep one factual core, not just different line breaks."
+
 ## Upgrading from board-deck-review
 
 This plugin was previously published as **Board deck review** (`board-deck-review`). The old GitHub URL redirects here, so an already-added marketplace keeps syncing; after the next sync, enable **ThoughtfulBits Skills** and remove the defunct **Board deck review** entry. If the sync doesn't pick up the rename, remove the marketplace and re-add it at the URL above.
@@ -117,7 +140,7 @@ This plugin was previously published as **Board deck review** (`board-deck-revie
 ## Repo layout
 
 ```
-skills/<skill-name>/SKILL.md   # the five skills
+skills/<skill-name>/SKILL.md   # the six skills
 skills/<skill-name>/agents/    # ChatGPT and Codex display/invocation metadata
 .codex-plugin/                 # native OpenAI plugin manifest
 .claude-plugin/                # Claude Desktop plugin marketplace manifests
