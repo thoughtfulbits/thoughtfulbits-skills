@@ -90,11 +90,11 @@ Use this packet to submit the skills-only ZIP produced by:
 ### 3. Unrelated writing request
 
 - **Prompt:** Draft a blog post announcing our new office and summer internship program.
-- **Expected result:** ThoughtfulBits Skills should not activate because this is blank-page long-form drafting, not editing an existing short-form social post or running one of the supported reviews.
+- **Expected result:** ThoughtfulBits Skills should not activate because this is blank-page long-form drafting, not editing an existing short- or medium-form social post or running one of the supported reviews.
 
 ## Release notes
 
-Version 1.3.0 adds `post-editor`, a reader-first workflow for existing X, LinkedIn, Threads, Bluesky, and short social-caption drafts. It strengthens cold-reader value, emotional recognition, concrete craft, and evidence-backed shareability while preserving facts, intent, voice, and cultural nuance. The framework explicitly credits Nobunaga, Jonah Berger, and Katherine Milkman. There is still no MCP server, custom UI, external service, or independent data collection.
+Version 1.3.1 broadens `post-editor` to short- and medium-form X, LinkedIn, and social-caption drafts. It strengthens cold-reader value, emotional recognition, concrete craft, and evidence-backed shareability while preserving facts, intent, voice, and cultural nuance. The framework explicitly credits Nobunaga, Jonah Berger, and Katherine Milkman. There is still no MCP server, custom UI, external service, or independent data collection.
 
 ## Publication checklist
 

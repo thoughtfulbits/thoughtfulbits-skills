@@ -9,7 +9,7 @@
       "name": "thoughtfulbits-skills",
       "source": "./",
       "description": "ThoughtfulBits skills for B2B SaaS leaders: board-deck audits, board feedback, product plan and feature feedback, multi-agent UI/UX testing, and reader-first social post editing.",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "author": {
         "name": "ThoughtfulBits Consulting"
       }

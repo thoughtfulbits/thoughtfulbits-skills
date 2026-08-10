@@ -11,7 +11,7 @@ Six review and editing skills for B2B SaaS leaders, packaged as a native OpenAI 
 | **product-plan-feedback** | A product plan, roadmap, launch plan, or GTM plan graded against a key-milestone rubric |
 | **product-feature-feedback** | A single feature or product scored with the [SPARK method](https://www.thoughtfulbits.me/p/boring-apps-add-some-spark): Simple, Purposeful, Attractive, Reliable, Known |
 | **test-ui-ux** | A specified UI or flow tested by five independent subagents, with an evidence-linked 1–10 average and a loop-ready pass/fail result |
-| **post-editor** | A short-form social post edited for cold-reader value, emotional resonance, and shareability without inventing facts or flattening the author's voice |
+| **post-editor** | A short- or medium-form social post edited for cold-reader value, emotional resonance, and shareability without inventing facts or flattening the author's voice |
 
 Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, a screenshot, a spec, or pasted text; provide a product URL; or paste a social draft. Ask in plain language and the right skill triggers from what you ask for. PowerPoint speaker notes are included when the host exposes them to the skill.
 
@@ -125,13 +125,13 @@ Tests a specified UI, workflow, screenshot, or product spec with five isolated e
 
 ### post-editor
 
-Edits an existing X, LinkedIn, Threads, Bluesky, or short social-caption draft for readers who may not know the author. It converts personal importance into reader value, strengthens the cold open, concrete proof, emotional recognition, practical usefulness, and story, then checks factual fidelity and voice. It does not promise virality, invent evidence, manufacture outrage, or substitute algorithm folklore for good writing.
+Edits an existing short- or medium-form X, LinkedIn, or social-caption draft for readers who may not know the author. It first locks the facts, intent, and voice, then strengthens the cold open, concrete proof, emotional recognition, practical usefulness, rhythm, and story. It does not promise virality, invent evidence, manufacture outrage, or substitute algorithm folklore for good writing.
 
 The reader-first framework credits [NOBUNAGA](https://x.com/japan_nobunaga/status/2086720217544339565); the shareability pass credits [Jonah Berger's *Contagious* resources](https://jonahberger.com/contagious-resources/) and [Berger and Katherine Milkman's published research](https://doi.org/10.1509/jmr.10.0353).
 
 > "Edit this X draft for a cold audience, but keep every fact and make it sound like me."
 
-> "Adapt this post for LinkedIn and Threads. Keep one factual core, not just different line breaks."
+> "Adapt this post for LinkedIn and X. Keep one factual core, not just different line breaks."
 
 ## Upgrading from board-deck-review
 

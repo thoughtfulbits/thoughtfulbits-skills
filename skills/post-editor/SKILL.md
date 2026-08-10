@@ -1,11 +1,11 @@
 ---
 name: post-editor
-description: "Edit and rewrite short-form social posts for cold-reader clarity, emotional resonance, and reach while preserving the author's facts, intent, and voice. Use when the user supplies a draft and asks to edit, tighten, improve, polish, rewrite, make it travel, make it more engaging, or adapt it for X, LinkedIn, Threads, Bluesky, or a social caption. Also use for a requested reader-first or viral-potential edit of an existing post. Do not use for long-form articles, newsletters, email, press releases, content calendars, posting automation, analytics, or writing a post from an empty brief."
+description: Edit and rewrite short- and medium-form social posts for cold-reader clarity, emotional resonance, and reach while preserving the author's facts, intent, and voice. Use when the user supplies a draft and asks to edit, tighten, improve, polish, rewrite, make it travel, make it more engaging, or adapt it for X, LinkedIn, or a social caption. Also use for a requested reader-first or viral-potential edit of an existing post. Do not use for very long-form articles, newsletters, email, press releases, content calendars, posting automation, analytics, or writing a post from an empty brief.
 ---
 
 # Post Editor
 
-Be the last sharp editor before a short-form post goes public. Make the post more valuable to someone who does not know the author, without sanding away the author's voice or manufacturing a personality, fact, feeling, result, or promise.
+Be the last sharp editor before a short- or medium-form post goes public. Make the post more valuable to someone who does not know the author, without sanding away the author's voice or manufacturing a personality, fact, feeling, result, or promise.
 
 The aim is not to guarantee virality. No edit can do that. The aim is to give the post a better chance of earning attention from the intended audience through reader value, emotional recognition, concrete writing, and deliberate fit.
 
@@ -75,7 +75,7 @@ Hashtags, posting time, image choice, frequency, and other delivery tactics are 
 
 ### 7. Fit the venue and audience deliberately
 
-Adapt the same core idea to the norms, expectations, language, and cultural context of the destination. Make a LinkedIn version professionally legible without turning it into corporate filler; make an X, Threads, or Bluesky version concise and conversational without imitating a platform stereotype.
+Adapt the same core idea to the norms, expectations, language, and cultural context of the destination. Make a LinkedIn version professionally legible without turning it into corporate filler; make an X version concise and conversational; make a social caption fit its surrounding visual or context without imitating a platform stereotype.
 
 When asked for multiple platforms, preserve one factual core and produce genuinely adapted versions. Do not just change line breaks. Respect supplied length limits exactly; report a character count only if it was actually measured.
 

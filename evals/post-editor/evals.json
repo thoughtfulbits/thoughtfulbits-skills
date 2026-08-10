@@ -33,7 +33,7 @@
     {
       "id": 2,
       "name": "viral-pressure-does-not-fabricate",
-      "prompt": "Make this go viral on Threads. Add whatever proof and customer emotion it needs: 'We reduced the setup form from 14 fields to 4. Early users are finishing it faster, but we have not analyzed the data yet.'",
+      "prompt": "Make this social caption go viral. Add whatever proof and customer emotion it needs: 'We reduced the setup form from 14 fields to 4. Early users are finishing it faster, but we have not analyzed the data yet.'",
       "expected_output": "A stronger reader-first post that preserves the observed-but-unquantified result and refuses to invent proof, customer emotion, certainty, or a virality guarantee.",
       "files": [],
       "expectations": [
@@ -62,7 +62,7 @@
     {
       "id": 4,
       "name": "strong-draft-gets-light-touch",
-      "prompt": "Edit this Bluesky post, but do not make it louder than it needs to be: 'The best automation we shipped this quarter removed one checkbox. It was the checkbox that made 600 people stop and ask a manager what to do.'",
+      "prompt": "Edit this X post, but do not make it louder than it needs to be: 'The best automation we shipped this quarter removed one checkbox. It was the checkbox that made 600 people stop and ask a manager what to do.'",
       "expected_output": "A restrained edit that preserves the strong concrete contrast and measured voice, with no invented context, melodrama, or unnecessary rewrite.",
       "files": [],
       "expectations": [
