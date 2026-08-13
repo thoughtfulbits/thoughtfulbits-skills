@@ -10,7 +10,7 @@ Six review and editing skills for B2B SaaS leaders, packaged as a native OpenAI 
 | **board-feedback** | The concise reaction a sharp director would give: does this deck make sense? One screen, no tables |
 | **product-plan-feedback** | A product plan, roadmap, launch plan, or GTM plan graded against a key-milestone rubric |
 | **product-feature-feedback** | A single feature or product scored with the [SPARK method](https://www.thoughtfulbits.me/p/boring-apps-add-some-spark): Simple, Purposeful, Attractive, Reliable, Known |
-| **test-ui-ux** | A specified UI or flow tested by five independent subagents, with an evidence-linked 1–10 average and a loop-ready pass/fail result |
+| **test-ui-ux** | Every important screen action mapped and simplified, then tested by five independent subagents with an evidence-linked 1–10 result |
 | **post-editor** | A short- or medium-form social post edited for cold-reader value, emotional resonance, and shareability without inventing facts or flattening the author's voice |
 
 Attach your material as `.pptx`, `.pdf`, `.docx`, `.md`, a screenshot, a spec, or pasted text; provide a product URL; or paste a social draft. Ask in plain language and the right skill triggers from what you ask for. PowerPoint speaker notes are included when the host exposes them to the skill.
@@ -117,11 +117,13 @@ Scores a single feature or product 1–5 on each SPARK dimension — **S**imple,
 
 ### test-ui-ux
 
-Tests a specified UI, workflow, screenshot, or product spec with five isolated evaluators: SPARK, Nielsen's usability heuristics, a cognitive walkthrough, PURE task-friction scoring, and WCAG 2.2 AA. Their equally weighted scores produce a deterministic 1–10 average. A live flow passes only at 8.0 or higher with no confirmed critical failure; static artifacts remain explicitly provisional.
+Tests a specified UI, workflow, screenshot, or product spec with five isolated evaluators: SPARK, Nielsen's usability heuristics, a cognitive walkthrough, PURE task-friction scoring, and WCAG 2.2 AA. For every supplied or encountered screen, it identifies the important actions, traces the whole input-to-result loop, counts logical steps, clicks or taps, and fields, and recommends the simplest safe path. Input recommendations distinguish what must remain user-owned from what can be optional, prefilled, derived, removed, or offered as an editable AI draft with confirmation. Their equally weighted scores produce a deterministic 1–10 average. A live flow passes only at 8.0 or higher with no confirmed critical failure; static artifacts remain explicitly provisional.
 
 > "Test our onboarding flow at this URL and give me the five-agent UI/UX score."
 
 > "Use this checkout screenshot and spec to establish a provisional UX baseline for our design loop."
+
+> "For every screen, count the steps, clicks, and fields and show me the simplest safe path."
 
 ### post-editor
 

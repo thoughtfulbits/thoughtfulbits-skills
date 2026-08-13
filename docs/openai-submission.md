@@ -62,12 +62,12 @@ Use this packet to submit the skills-only ZIP produced by:
 - **Expected skill:** `product-feature-feedback`
 - **Expected result:** A cited 1-5 score for each SPARK dimension, the correct total and verdict band, a cut list, one delight moment, and three focused improvements.
 
-### 6. Multi-agent UI/UX test
+### 6. Multi-agent UI/UX and action-loop test
 
-- **Prompt:** Test the account-creation flow in this spec with five independent UI/UX methods. Return the numeric average, critical gate, and loop-ready JSON.
+- **Prompt:** Test the account-creation flow in this spec with five independent UI/UX methods. For every screen, identify the actions that matter, count the steps, clicks, and fields, and show the simplest safe path before returning the numeric average, critical gate, and loop-ready JSON.
 - **Attachment:** https://raw.githubusercontent.com/thoughtfulbits/thoughtfulbits-skills/main/evals/test-ui-ux/files/harbor_account_creation_spec.md
 - **Expected skill:** `test-ui-ux`
-- **Expected result:** Exactly five isolated method results — SPARK, Nielsen, cognitive walkthrough, PURE, and WCAG 2.2 AA — mechanically averaged to one decimal, with a provisional verdict because a specification is not a live exercised UI.
+- **Expected result:** Exactly five isolated method results — SPARK, Nielsen, cognitive walkthrough, PURE, and WCAG 2.2 AA — mechanically averaged to one decimal, plus a schema 2.0 action analysis covering every named screen, current and simplest-safe step/click/field counts, and safe input simplifications. The verdict remains provisional because a specification is not a live exercised UI.
 
 ### 7. Reader-first social post edit
 
@@ -94,7 +94,7 @@ Use this packet to submit the skills-only ZIP produced by:
 
 ## Release notes
 
-Version 1.3.1 broadens `post-editor` to short- and medium-form X, LinkedIn, and social-caption drafts. It strengthens cold-reader value, emotional recognition, concrete craft, and evidence-backed shareability while preserving facts, intent, voice, and cultural nuance. The framework explicitly credits Nobunaga, Jonah Berger, and Katherine Milkman. There is still no MCP server, custom UI, external service, or independent data collection.
+Version 1.4.0 expands `test-ui-ux` with a required action-loop analysis. Every supplied or encountered screen now gets an inventory of important user actions, current steps, clicks or taps, fields, avoidable friction, and the simplest safe path. Input recommendations distinguish user-owned decisions from optional, prefilled, derived, removed, or editable AI-drafted information, with confirmation required and consequential choices protected. The existing five independent methods, equal average, 8.0 threshold, critical-failure gate, and provisional static-evidence rules remain unchanged. There is still no MCP server, custom UI, external service, or independent data collection.
 
 ## Publication checklist
 

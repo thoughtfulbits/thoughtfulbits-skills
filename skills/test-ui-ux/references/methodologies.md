@@ -23,6 +23,8 @@ The output contract uses common finding severities `critical`, `high`, `medium`,
 
 Method-native arithmetic is binding. Return the inputs, calculation, and resulting integer in `methodology_data`; do not raise or lower the calculated score afterward to match an overall impression.
 
+Independently inspect every important action on every supplied, specified, or in-scope encountered screen. Judge the whole loop from user intent and input through system response and result. Treat avoidable navigation, pointer actions, choices, fields, and repeated entry as method-relevant friction. Optimize for the simplest safe and accessible path, not the smallest raw click count.
+
 Use `critical` only for evidence that confirms at least one of these in the requested experience:
 
 - the core task cannot be completed;
@@ -45,6 +47,8 @@ Evaluate the experience across five 1–5 dimensions:
 - **Known:** the experience is anchored in a problem the target user already recognizes and would prioritize, rather than requiring education that the problem exists. Clear labels support usability but do not by themselves prove Known; require customer language, research, demand, existing behavior, or an explicit evidence-backed brief. Without problem-recognition evidence, cap Known at 3.
 
 Cite at least one item of evidence per letter. Sum the five letter scores, then convert the 5–25 total to the common scale:
+
+Simple and Purposeful must explicitly reflect the important-action inventory: unnecessary steps, clicks, decisions, or fields lower the relevant letter score even when each individual control is understandable. A 5 for Simple requires no material avoidable step across the important actions in scope.
 
 ```text
 method_score = round(1 + 9 * (spark_total - 5) / 20)
@@ -69,6 +73,8 @@ Inspect all ten heuristics:
 9. recognition, diagnosis, and recovery from errors; and
 10. help and documentation.
 
+Use the action loops when evaluating flexibility and efficiency of use, aesthetic and minimalist design, recognition rather than recall, user control, and error prevention. Record avoidable repeated entry or navigation as a violation with severity proportional to its frequency and effect; do not count a necessary safety step as a violation.
+
 Assign each confirmed violation severity 1–4:
 
 - 1 cosmetic;
@@ -84,7 +90,7 @@ Map Nielsen severities to output finding severities: 1 to `low`, 2 to `medium`, 
 
 Sources: Polson, Lewis, Rieman, and Wharton; Wharton et al., cognitive walkthrough research — https://doi.org/10.1145/142750.142864
 
-Decompose the requested task into observable actions. For every action answer:
+Decompose every important action loop in scope into observable actions. For every action answer:
 
 1. Will the target user try to achieve the right effect?
 2. Will the target user notice that the correct action is available?
@@ -128,6 +134,20 @@ Preserve the native PURE total, mean, worst step, and step count. Convert the me
 
 Cap the method score at 5 when any step rates 3. If that step makes the core task impossible, cap at 3 and record a critical failure. Return the step table and native measures in `methodology_data`.
 
+PURE owns the shared quantitative action inventory. Put it in `methodology_data.action_analysis` using the exact schema in `output-contract.md`.
+
+Counting rules:
+
+- A logical step is one deliberate user interaction or one passive system wait represented in the ordered loop. `current_counts.logical_steps` counts user interactions only; `system_wait` entries remain visible but do not add to that total.
+- Completing one text field is one `field_entry` step, not one step per keystroke. Record its pointer activations separately so keyboard and pointer paths remain distinguishable.
+- `clicks_taps` is the sum of every step's `pointer_activations`.
+- `required_fields` and `optional_fields` count the corresponding objects in `inputs`.
+- Use `null` for a count that static or blocked evidence cannot establish. Do not estimate hidden screens or transitions.
+
+For each input, recommend exactly one of: keep user-required, make optional, prefill known data, derive automatically, provide an editable AI draft with confirmation, or remove. AI drafts always require confirmation. Mark identity, authentication, consent, payment, legal-attestation, and destructive-decision inputs as sensitive or consequential; never recommend AI generation for them.
+
+The simplest-safe path may contain more interactions than the current path when a confirmation, consent, or recovery safeguard is missing. Do not call a safety step avoidable merely to improve the count.
+
 Use the same task decomposition between loop runs. A changed task or path creates a new baseline.
 
 ## WCAG 2.2 AA (`wcag_2_2_aa`)
@@ -154,3 +174,5 @@ Start at 10, round to the nearest integer, and clamp to 1–10. Return applicabl
 Map accessibility issue classifications to output finding severities: minor to `low`, serious to `high`, and critical to `critical`.
 
 Never state that the product conforms to WCAG unless a complete conformance evaluation supports that claim. This method score is an audit signal, not a conformance certificate.
+
+Apply checks to every important action loop, including equivalent keyboard and assistive-technology paths. A pointer-count reduction is not an improvement when it removes a label, focus target, confirmation, error recovery, or other accessible safeguard.
